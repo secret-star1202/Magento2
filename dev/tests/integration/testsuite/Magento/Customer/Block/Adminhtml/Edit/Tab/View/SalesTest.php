@@ -9,7 +9,7 @@ use Magento\Customer\Controller\RegistryConstants;
 use Magento\TestFramework\Helper\Bootstrap;
 
 /**
- * Test for \Magento\Customer\Block\Adminhtml\Edit\Tab\View\Sales
+ * Test for \Magento\Customer\Block\Adminhtml\Edit\Tab\ViewMovie\Sales
  *
  * @magentoAppArea adminhtml
  */

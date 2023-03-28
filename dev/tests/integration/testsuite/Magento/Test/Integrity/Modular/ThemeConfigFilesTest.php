@@ -39,6 +39,6 @@ class ThemeConfigFilesTest extends \Magento\TestFramework\TestCase\AbstractConfi
     protected function _getXsdPath()
     {
         return $this->componentRegistrar->getPath(ComponentRegistrar::LIBRARY, 'magento/framework')
-            . '/View/PageLayout/etc/layouts.xsd';
+            . '/ViewMovie/PageLayout/etc/layouts.xsd';
     }
 }

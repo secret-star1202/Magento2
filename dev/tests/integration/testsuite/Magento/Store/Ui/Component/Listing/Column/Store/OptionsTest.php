@@ -21,7 +21,7 @@ class OptionsTest extends TestCase
 {
     private const DEFAULT_WEBSITE_NAME = 'Main Website';
     private const DEFAULT_STORE_GROUP_NAME = 'Main Website Store';
-    private const DEFAULT_STORE_NAME = 'Default Store View';
+    private const DEFAULT_STORE_NAME = 'Default Store ViewMovie';
 
     /**
      * @var OptionsFactory

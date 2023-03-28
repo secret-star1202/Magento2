@@ -6,7 +6,7 @@
 
 $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
 
-// Synonym groups for "Default Store View"
+// Synonym groups for "Default Store ViewMovie"
 /** @var $synonymsModel \Magento\Search\Model\SynonymReader */
 $synonymsModel = $objectManager->create(\Magento\Search\Model\SynonymReader::class);
 $synonymsModel->setSynonyms('queen,monarch')->setStoreId(1)->save();

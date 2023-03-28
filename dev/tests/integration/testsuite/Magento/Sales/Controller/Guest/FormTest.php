@@ -32,7 +32,7 @@ class FormTest extends AbstractController
     }
 
     /**
-     * View order as logged in customer
+     * ViewMovie order as logged in customer
      *
      * @magentoDataFixture Magento/Sales/_files/order.php
      * @magentoDataFixture Magento/Customer/_files/customer.php

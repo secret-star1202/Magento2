@@ -14,12 +14,13 @@
             <column name="director_id"/>
         </constraint>
     </table>
+
     <table name="magenest_movie" resource="default" engine="innodb" comment="List of movie">
         <column xsi:type="int" name="movie_id" nullable="false" identity="true" comment="Auto Increment"/>
         <column xsi:type="text" name="name" nullable="false" comment="Name"/>
         <column xsi:type="text" name="description" nullable="false" comment="Description"/>
         <column xsi:type="int" name="rating" nullable="false" comment="Rating"/>
-        <column xsi:type="int" name="director_id"  comment="ID of table director"/>
+        <column xsi:type="int" name="director_id" comment="ID of table director"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="movie_id"/>
         </constraint>
@@ -27,12 +28,24 @@
                     table="magenest_movie" column="director_id" referenceTable="magenest_director"
                     referenceColumn="director_id" onDelete="CASCADE"/>
     </table>
+
     <table name="magenest_actor" resource="default" engine="innodb" comment="List of actor">
         <column xsi:type="int" name="actor_id" nullable="false" identity="true" comment="Auto Increment"/>
-        <column xsi:type="text" name="name"  nullable="false" comment="Nam"/>
+        <column xsi:type="text" name="name" nullable="false" comment="Nam"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="actor_id"/>
         </constraint>
     </table>
+    <table name="magenest_movie_actor" resource="default" engine="innodb">
+        <column xsi:type="int" name="movie_id" nullable="false" />
+        <column xsi:type="int" name="actor_id" nullable="false" />
+        <constraint xsi:type="foreign" referenceId="MAGENEST_MOVIE_MOVIE_ID_MAGENEST_MOVIE_ACTOR_MOVIE_ID"
+                    table="magenest_movie_actor" column="movie_id" referenceTable="magenest_movie"
+                    referenceColumn="movie_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="MAGENEST_ACTOR_ACTOR_ID_MAGENEST_ACTOR_MOVIE_ACTOR_ID"
+                    table="magenest_movie_actor" column="actor_id" referenceTable="magenest_actor"
+                    referenceColumn="actor_id" onDelete="CASCADE"/>
+    </table>
+
 
 </schema>

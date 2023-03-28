@@ -31,7 +31,7 @@ if (!$store->load($storeCode)->getId()) {
     $store->setCode($storeCode)
         ->setWebsiteId($storeManager->getWebsite()->getId())
         ->setGroupId($storeManager->getWebsite()->getDefaultGroupId())
-        ->setName('Secondary Store View')
+        ->setName('Secondary Store ViewMovie')
         ->setSortOrder(10)
         ->setIsActive(1);
     $store->save();

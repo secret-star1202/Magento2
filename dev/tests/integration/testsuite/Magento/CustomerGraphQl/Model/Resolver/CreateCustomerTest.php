@@ -157,7 +157,7 @@ QUERY;
         $customer = $this->customerRepository->get('test@magento.com');
         $this->assertEquals('Test', $customer->getFirstname());
         $this->assertEquals('Magento', $customer->getLastname());
-        $this->assertEquals('Test Store View', $customer->getCreatedIn());
+        $this->assertEquals('Test Store ViewMovie', $customer->getCreatedIn());
 
         $store = $this->storeRepository->getById($customer->getStoreId());
         $this->assertEquals('test_store_view', $store->getCode());
@@ -189,7 +189,7 @@ QUERY;
         ),
         DataFixture(
             StoreFixture::class,
-            ['code' => 'test_store_view', 'name' => 'Test Store View', 'store_group_id' => '$store_group2.id$']
+            ['code' => 'test_store_view', 'name' => 'Test Store ViewMovie', 'store_group_id' => '$store_group2.id$']
         ),
         Config('general/locale/code', 'fr_FR', 'store', 'test_store_view'),
         ComponentsDir('Magento/CustomerGraphQl/_files')
@@ -232,7 +232,7 @@ QUERY;
         $customer = $this->customerRepository->get('test@magento.com');
         $this->assertEquals('Test', $customer->getFirstname());
         $this->assertEquals('Magento', $customer->getLastname());
-        $this->assertEquals('Test Store View', $customer->getCreatedIn());
+        $this->assertEquals('Test Store ViewMovie', $customer->getCreatedIn());
 
         $store = $this->storeRepository->getById($customer->getStoreId());
         $this->assertEquals('test_store_view', $store->getCode());

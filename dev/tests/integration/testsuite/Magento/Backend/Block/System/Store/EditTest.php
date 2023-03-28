@@ -129,11 +129,11 @@ class EditTest extends \PHPUnit\Framework\TestCase
             ],
             [
                 ['store_type' => 'store', 'store_data' => \Magento\Store\Model\Store::class, 'store_action' => 'add'],
-                'New Store View'
+                'New Store ViewMovie'
             ],
             [
                 ['store_type' => 'store', 'store_data' => \Magento\Store\Model\Store::class, 'store_action' => 'edit'],
-                'Edit Store View'
+                'Edit Store ViewMovie'
             ]
         ];
     }

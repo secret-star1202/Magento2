@@ -75,7 +75,7 @@ class ConfirmationTest extends TestCase
                                 'created_at' => '2020-12-28 07:05:50',
                                 'website_id' => ['1'],
                                 'confirmation' => false,
-                                'created_in' => 'Default Store View',
+                                'created_in' => 'Default Store ViewMovie',
                             ],
                             [
                                 'id_field_name' => 'entity_id',
@@ -104,7 +104,7 @@ class ConfirmationTest extends TestCase
                                 'created_at' => '2020-12-28 07:05:50',
                                 'website_id' => ['1'],
                                 'confirmation' => __('Confirmation Required'),
-                                'created_in' => 'Default Store View',
+                                'created_in' => 'Default Store ViewMovie',
                             ],
                             [
                                 'id_field_name' => 'entity_id',
