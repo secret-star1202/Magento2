@@ -520,7 +520,7 @@ class SaveTest extends AbstractBackendController
                 'customer' => [
                     CustomerData::DOB => '2000-01-01',
                     CustomerData::STORE_ID => 1,
-                    CustomerData::CREATED_IN => 'Default Store View',
+                    CustomerData::CREATED_IN => 'Default Store ViewMovie',
                 ],
             ]
         );

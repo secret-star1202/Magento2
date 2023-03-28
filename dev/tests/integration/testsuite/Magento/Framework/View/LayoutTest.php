@@ -8,7 +8,7 @@ declare(strict_types=1);
 /**
  * Layout integration tests
  *
- * Note that some methods are not covered here, see the \Magento\Framework\View\LayoutDirectivesTest
+ * Note that some methods are not covered here, see the \Magento\Framework\ViewMovie\LayoutDirectivesTest
  *
  * @see \Magento\Framework\View\LayoutDirectivesTest
  */
@@ -123,7 +123,7 @@ class LayoutTest extends TestCase
     /**
      * A smoke test for generating elements.
      *
-     * See sophisticated tests at \Magento\Framework\View\LayoutDirectivesTest
+     * See sophisticated tests at \Magento\Framework\ViewMovie\LayoutDirectivesTest
      * @see \Magento\Framework\View\LayoutDirectivesTest
      * @magentoAppIsolation enabled
      *

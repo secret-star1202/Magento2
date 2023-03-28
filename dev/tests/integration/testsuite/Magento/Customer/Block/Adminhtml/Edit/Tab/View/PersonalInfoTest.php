@@ -9,7 +9,7 @@ use Magento\Customer\Api\Data\CustomerInterfaceFactory;
 use Magento\Customer\Controller\RegistryConstants;
 
 /**
- * Magento\Customer\Block\Adminhtml\Edit\Tab\View
+ * Magento\Customer\Block\Adminhtml\Edit\Tab\ViewMovie
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @magentoAppArea adminhtml

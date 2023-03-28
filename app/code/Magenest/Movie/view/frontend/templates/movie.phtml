@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @var Magenest\Movie\Block\Display $block
+ */
+echo $block->hello();
+?>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .post-id {
+        width: 2%
+    }
+
+    .post-name {
+        width: 30%
+    }
+
+</style>
+
+<table>
+    <tr>
+        <th class="Director-id">Id</th>
+        <th class="Director-name">Director Name</th>
+    </tr>
+    <?php
+    foreach ($block->getDirectorCollection() as $key => $director) {
+        echo '<tr>
+                    <td>' . $director->getDirectorId() . '</td>
+                    <td>' . $director->getName() . '</td>
+                  </tr>';
+    }
+    ?>
+</table>
+
+</body>
+</html>

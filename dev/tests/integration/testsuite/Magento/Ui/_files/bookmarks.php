@@ -30,7 +30,7 @@ $bookmarks = [
         'identifier' => 'third',
         'current' => 1,
         'config' => '{}',
-        'title' => 'Default View'
+        'title' => 'Default ViewMovie'
     ],
 ];
 

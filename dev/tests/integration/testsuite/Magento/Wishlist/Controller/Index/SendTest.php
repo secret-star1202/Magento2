@@ -100,7 +100,7 @@ class SendTest extends AbstractController
             1,
             Xpath::getElementsCountForXpath(
                 "//a[contains(@href, 'wishlist/shared/index/code/fixture_unique_code/')"
-                . " and contains(text(), 'View all Wish List')]",
+                . " and contains(text(), 'ViewMovie all Wish List')]",
                 $messageContent
             )
         );

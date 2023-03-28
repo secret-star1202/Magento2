@@ -13,7 +13,7 @@ use Magento\TestFramework\Cms\Model\CustomLayoutManager;
 use Magento\TestFramework\TestCase\AbstractController;
 
 /**
- * Test for \Magento\Cms\Controller\Page\View class.
+ * Test for \Magento\Cms\Controller\Page\ViewMovie class.
  */
 class PageTest extends AbstractController
 {

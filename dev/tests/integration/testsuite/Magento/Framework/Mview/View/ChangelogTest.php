@@ -9,7 +9,7 @@ use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Mview\View;
 
 /**
- * Test Class for \Magento\Framework\Mview\View\Changelog
+ * Test Class for \Magento\Framework\Mview\ViewMovie\Changelog
  *
  * @magentoDbIsolation disabled
  */

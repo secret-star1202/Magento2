@@ -161,11 +161,11 @@ class CustomerSharingOptionsTest extends WebapiAbstract
     public function getCustomerDataWebsiteScopeDataProvider(): array
     {
         return [
-            'Default Store View' => [
+            'Default Store ViewMovie' => [
                 'store_code' => 'default',
                 'exception' => false
             ],
-            'Custom Store View' => [
+            'Custom Store ViewMovie' => [
                 'store_code' => 'fixture_second_store',
                 'exception' => true
             ]
@@ -180,11 +180,11 @@ class CustomerSharingOptionsTest extends WebapiAbstract
     public function getCustomerDataGlobalScopeDataProvider(): array
     {
         return [
-            'Default Store View' => [
+            'Default Store ViewMovie' => [
                 'store_code' => 'default',
                 'exception' => false
             ],
-            'Custom Store View' => [
+            'Custom Store ViewMovie' => [
                 'store_code' => 'fixture_second_store',
                 'exception' => false
             ]

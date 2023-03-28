@@ -35,7 +35,7 @@ class RequestGeneratorTest extends \PHPUnit\Framework\TestCase
         $this->assertArrayHasKey('test_quick_search_bucket', $quickSearch['aggregations'], $message);
         $this->assertArrayNotHasKey('test_catalog_view_bucket', $quickSearch['aggregations'], $message);
 
-        //Catalog View
+        //Catalog ViewMovie
         $this->assertArrayHasKey('catalog_view_container', $requests);
         $catalogView = $requests['catalog_view_container'];
         $this->assertArrayNotHasKey('test_quick_search_bucket', $catalogView['aggregations'], $message);

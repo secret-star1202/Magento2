@@ -383,8 +383,8 @@ class ProductRepositoryTest extends TestCase
         $product2Store1Name = $product2->getName();
         $product2Store1Price = 10;
 
-        $product1Store2Name = $product1->getName() . ' Store View Value';
-        $product2Store2Name = $product2->getName() . ' Store View Value';
+        $product1Store2Name = $product1->getName() . ' Store ViewMovie Value';
+        $product2Store2Name = $product2->getName() . ' Store ViewMovie Value';
         $product2Store2Price = 9;
 
         $this->storeManager->setCurrentStore($store2);

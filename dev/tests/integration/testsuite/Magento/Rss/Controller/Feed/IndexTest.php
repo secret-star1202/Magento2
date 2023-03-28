@@ -13,7 +13,7 @@ use Magento\TestFramework\TestCase\AbstractBackendController;
 use Magento\Wishlist\Model\Wishlist;
 
 /**
- * Test for \Magento\Rss\Controller\Feed\Index.
+ * Test for \Magento\Rss\Controller\Feed\Display.
  */
 class IndexTest extends AbstractBackendController
 {

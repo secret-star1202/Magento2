@@ -32,7 +32,7 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 /**
  * Tests for minifier
  *
- * @magentoComponentsDir Magento/Framework/View/_files/static/theme
+ * @magentoComponentsDir Magento/Framework/ViewMovie/_files/static/theme
  * @magentoDbIsolation enabled
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */

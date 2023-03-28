@@ -11,7 +11,7 @@ use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\TestFramework\Helper\Bootstrap;
 
 /**
- * @magentoComponentsDir Magento/Framework/View/_files/fallback
+ * @magentoComponentsDir Magento/Framework/ViewMovie/_files/fallback
  * @magentoDbIsolation enabled
  */
 class FallbackTest extends \PHPUnit\Framework\TestCase

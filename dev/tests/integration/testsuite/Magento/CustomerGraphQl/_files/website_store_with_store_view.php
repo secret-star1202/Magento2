@@ -44,7 +44,7 @@ $store = $objectManager->get(StoreInterfaceFactory::class)->create();
 $store->setCode('test_store_view')
     ->setWebsiteId($website->getId())
     ->setGroupId($storeGroup->getId())
-    ->setName('Test Store View')
+    ->setName('Test Store ViewMovie')
     ->setSortOrder(10)
     ->setIsActive(1);
 $storeResource->save($store);
