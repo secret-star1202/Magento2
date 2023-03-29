@@ -4,7 +4,8 @@
  * @var Magenest\Movie\Block\Display $block
  */
 ?>
-<h2>Table Director</h2>
+
+
 <style>
     table {
         font-family: arial, sans-serif;
@@ -32,7 +33,25 @@
     }
 
 </style>
+<h2>Table Movie</h2>
+<table>
+    <tr>
+        <th class="Movie-id">Id</th>
+        <th class="Movie-name">Movie Name</th>
+    </tr>
+    <?php
+    foreach ($block->getMovieCollection() as $key => $movie) {
+        echo '<tr>
+                    <td>' . $movie->getActorId() . '</td>
+                    <td>' . $movie->getName() . '</td>
+                  </tr>';
+    }
+    ?>
+</table>
 
+    </br>
+    </br>
+<h2>Table Director</h2>
 <table>
     <tr>
         <th class="Director-id">Id</th>
@@ -47,6 +66,27 @@
     }
     ?>
 </table>
+
+</br>
+</br>
+
+<h2>Table Actor</h2>
+
+<table>
+    <tr>
+        <th class="Actor-id">Id</th>
+        <th class="Actor-name">Actor Name</th>
+    </tr>
+    <?php
+    foreach ($block->getActorCollection() as $key => $actor) {
+        echo '<tr>
+                    <td>' . $actor->getActorId() . '</td>
+                    <td>' . $actor->getName() . '</td>
+                  </tr>';
+    }
+    ?>
+</table>
+
 
 </body>
 </html>
