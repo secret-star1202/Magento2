@@ -2,8 +2,9 @@
 
 namespace Magenest\Movie\Block;
 
-use Magento\Framework\View\Element\Template;
 use Magenest\Movie\Model\DirectorFactory;
+use Magento\Framework\View\Element\Template;
+
 class Display extends Template
 {
     protected $_directorFactory;
@@ -13,14 +14,9 @@ class Display extends Template
         parent::__construct($context);
     }
 
-    public function hello()
-    {
-        return __('Hello');
-    }
-
     public function getDirectorCollection()
     {
         $director = $this->_directorFactory->create();
-        return $director->getCollection();
+        return $director->getCollection()->addFieldToSelect('*')->setPageSize(10)->load();
     }
 }

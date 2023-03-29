@@ -10,6 +10,7 @@ class Director extends AbstractModel implements IdentityInterface
     protected $_cacheTag = 'magenest_director';
     protected $_eventPrefix = 'magenest_director';
 
+
     protected function _construct()
     {
         $this->_init('Magenest\Movie\Model\ResourceModel\Director');
