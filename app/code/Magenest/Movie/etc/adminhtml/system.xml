@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="magenest" translate="label" sortOrder="10">
             <label>Magenest</label>
@@ -9,15 +10,29 @@
             <label>Movie</label>
             <tab>magenest</tab>
             <resource>Magenest_Movie::movie_config</resource>
-            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
                 <label>Magenest Configuration</label>
-                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Module Enable</label>
+                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Text Field</label>
+                </field>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label><![CDATA[<span>Yes/No_Field_</span><span class="colorRed">abcd</span>]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Display Text</label>
-                    <comment>This text will display on the frontend.</comment>
+                <field id="allow" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0">
+                    <label>Custom Select Field</label>
+                    <source_model>Magenest\Movie\Model\Config\Source\Options</source_model>
+                </field>
+                <field id="rows_table_movie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0">
+                    <label>Rows in table “magenest_movie”</label>
+                    <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\RowsMovie</frontend_model>
+                </field>
+                <field id="rows_table_actor" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0">
+                    <label>Rows in table “magenest_actor”</label>
+                    <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\RowsActor</frontend_model>
                 </field>
             </group>
         </section>
