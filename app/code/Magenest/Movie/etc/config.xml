@@ -3,8 +3,10 @@
     <default>
         <movie>
             <general>
-<!--                <enable>0</enable>-->
-                <display_text>Hello World</display_text>
+                <enable>1</enable>
+                <rows_table_movie>
+<!--                    <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\RowsMovie</frontend_model>-->
+                </rows_table_movie>
             </general>
         </movie>
     </default>

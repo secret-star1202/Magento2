@@ -2,41 +2,48 @@
 
 namespace Magenest\Movie\Block;
 
-use Magenest\Movie\Model\DirectorFactory;
-use Magenest\Movie\Model\ActorFactory;
-use Magenest\Movie\Model\MovieFactory;
-
+use Magenest\Movie\Model\ResourceModel\Director\CollectionFactory as DirectorCollectionFactory;
+use Magenest\Movie\Model\ResourceModel\Actor\CollectionFactory as ActorCollectionFatory;
+use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory as MovieCollectionFactory;
 use Magento\Framework\View\Element\Template;
 
 class Display extends Template
 {
-    protected $_directorFactory;
-    protected $_actorFactory;
-    protected $_movieFactory;
+    protected $_directorCollectionFactory;
+    protected $_actorCollectionFactory;
+    protected $_movieCollectionFactory;
 
-    public function __construct(Template\Context $context, DirectorFactory $directorFactory, ActorFactory $actorFactory, MovieFactory $movieFactory)
-    {
-        $this->_directorFactory = $directorFactory;
-        $this->_actorFactory = $actorFactory;
-        $this->_movieFactory = $movieFactory;
+    public function __construct(
+        Template\Context $context,
+        DirectorCollectionFactory  $directorCollectionFactory,
+        ActorCollectionFatory     $actorCollectionFactory,
+        MovieCollectionFactory     $movieCollectionFactory
+    ) {
+        $this->_directorCollectionFactory = $directorCollectionFactory;
+        $this->_actorCollectionFactory = $actorCollectionFactory;
+        $this->_movieCollectionFactory = $movieCollectionFactory;
+
         parent::__construct($context);
     }
 
     public function getDirectorCollection()
     {
-        $director = $this->_directorFactory->create();
-        return $director->getCollection()->addFieldToSelect('*')->setPageSize(10)->load();
+        $collection = $this->_directorCollectionFactory->create();
+        return $collection->addFieldToSelect('*')->setPageSize(10);
+
     }
 
     public function getActorCollection()
     {
-        $actor = $this->_actorFactory->create();
-        return $actor->getCollection()->addFieldToSelect('*')->setPageSize(10)->load();
+        $collection = $this->_actorCollectionFactory->create();
+        return $collection->addFieldToSelect('*')->setPageSize(10);
+
     }
 
     public function getMovieCollection()
     {
-        $actor = $this->_movieFactory->create();
-        return $actor->getCollection()->addFieldToSelect('*')->setPageSize(10)->load();
+        $collection = $this->_movieCollectionFactory->create();
+        return $collection->addFieldToSelect('*')->setPageSize(10);
     }
+
 }

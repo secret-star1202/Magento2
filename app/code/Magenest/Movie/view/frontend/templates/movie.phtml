@@ -3,6 +3,7 @@
 /**
  * @var Magenest\Movie\Block\Display $block
  */
+//echo $block->getRowsMovie();
 ?>
 
 
@@ -42,7 +43,7 @@
     <?php
     foreach ($block->getMovieCollection() as $key => $movie) {
         echo '<tr>
-                    <td>' . $movie->getActorId() . '</td>
+                    <td>' . $movie->getMovieId() . '</td>
                     <td>' . $movie->getName() . '</td>
                   </tr>';
     }
