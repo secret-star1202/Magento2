@@ -3,14 +3,14 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magenest_Movie::helloworld" title="Hello World" sortOrder="51">
+                <resource id="Magenest_Movie::movie" title="Hello" sortOrder="51">
                     <resource id="Magenest_Movie::post" title="Posts" sortOrder="10"/>
                     <resource id="Magenest_Movie::movie_configuration" title="Configuration" sortOrder="99" />
                 </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Magenest_Movie::movie_config" title="Hello World"/>
+                            <resource id="Magenest_Movie::movie_config" title="Hello"/>
                         </resource>
                     </resource>
                 </resource>
