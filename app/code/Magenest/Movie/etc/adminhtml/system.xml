@@ -22,17 +22,25 @@
                     <label><![CDATA[<span>Yes/No_Field_</span><span class="colorRed">abcd</span>]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+
+
                 <field id="allow" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0">
                     <label>Custom Select Field</label>
                     <source_model>Magenest\Movie\Model\Config\Source\Options</source_model>
                 </field>
-                <field id="rows_table_movie" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0">
+
+                <field id="rows_table_movie" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0">
                     <label>Rows in table “magenest_movie”</label>
                     <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\RowsMovie</frontend_model>
                 </field>
-                <field id="rows_table_actor" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0">
+                <field id="rows_table_actor" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0">
                     <label>Rows in table “magenest_actor”</label>
                     <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\RowsActor</frontend_model>
+                    <depends>
+                        <field id="allow">1</field>
+                    </depends>
                 </field>
             </group>
         </section>

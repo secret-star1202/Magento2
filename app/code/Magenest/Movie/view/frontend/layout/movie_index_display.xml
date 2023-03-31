@@ -3,4 +3,5 @@
     <referenceContainer name="content">
         <block class="Magenest\Movie\Block\Display" name="movie_display" template="Magenest_Movie::movie.phtml"/>
     </referenceContainer>
+
 </page>
