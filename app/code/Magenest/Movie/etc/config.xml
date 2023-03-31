@@ -3,10 +3,8 @@
     <default>
         <movie>
             <general>
-                <enable>1</enable>
-                <rows_table_movie>
-<!--                    <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\RowsMovie</frontend_model>-->
-                </rows_table_movie>
+                <display_text>I’m a text field</display_text>
+                <enable_yes_no>1</enable_yes_no>
             </general>
         </movie>
     </default>
