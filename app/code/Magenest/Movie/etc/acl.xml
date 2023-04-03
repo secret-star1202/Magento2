@@ -3,8 +3,8 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magenest_Movie::movie" title="Hello" sortOrder="51">
-                    <resource id="Magenest_Movie::post" title="Posts" sortOrder="10"/>
+                <resource id="Magenest_Movie::movie" title="Movie" sortOrder="51">
+                    <resource id="Magenest_Movie::director" title="Director" sortOrder="10"/>
                     <resource id="Magenest_Movie::movie_configuration" title="Configuration" sortOrder="99" />
                 </resource>
                 <resource id="Magento_Backend::stores">
