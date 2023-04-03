@@ -53,7 +53,7 @@ class FileSystemTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoComponentsDir Magento/Framework/ViewMovie/_files/Fixture_Module
+     * @magentoComponentsDir Magento/Framework/View/_files/Fixture_Module
      */
     public function testGetViewFile()
     {

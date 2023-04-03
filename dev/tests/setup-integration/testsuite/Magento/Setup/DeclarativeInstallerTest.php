@@ -434,7 +434,7 @@ class DeclarativeInstallerTest extends SetupTestCase
         $this->assertDoesNotMatchRegularExpression(
             '/KEY\s+`TEST_TABLE_VARCHAR`\s+\(`varchar`\)/',
             $tableSql,
-            'Display is not being disabled by external module'
+            'Index is not being disabled by external module'
         );
     }
 

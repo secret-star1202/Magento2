@@ -10,7 +10,7 @@ use \Magento\TestFramework\Helper\Bootstrap;
 use Magento\TestFramework\Helper\CacheCleaner;
 
 /**
- * @magentoComponentsDir Magento/Framework/ViewMovie/_files/UiComponent/theme
+ * @magentoComponentsDir Magento/Framework/View/_files/UiComponent/theme
  * @magentoAppIsolation enabled
  * @magentoDbIsolation enabled
  */

@@ -56,7 +56,7 @@ return [
                 'code' => 'default',
                 'website_id' => '1',
                 'group_id' => '1',
-                'name' => 'Default Store ViewMovie',
+                'name' => 'Default Store View',
                 'sort_order' => '0',
                 'is_active' => '1',
             ],

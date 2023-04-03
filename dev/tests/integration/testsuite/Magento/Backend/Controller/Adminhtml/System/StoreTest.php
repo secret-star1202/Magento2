@@ -154,7 +154,7 @@ class StoreTest extends \Magento\TestFramework\TestCase\AbstractBackendControlle
         $this->dispatch('backend/admin/system_store/save');
         //Check that errors was generated and set to session
         $this->assertSessionMessages(
-            $this->containsEqual('Please enable your Store ViewMovie before using this Web Site as Default'),
+            $this->containsEqual('Please enable your Store View before using this Web Site as Default'),
             MessageInterface::TYPE_ERROR,
             ManagerInterface::class
         );

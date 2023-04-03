@@ -169,7 +169,7 @@ class CustomerMetadataTest extends TestCase
             if (strpos($option->getLabel(), 'Main Website Store') !== false) {
                 $this->assertNotEmpty($option->getOptions());
                 //Check nested option
-                $this->assertTrue(strpos($option->getOptions()[0]->getLabel(), 'Default Store ViewMovie') !== false);
+                $this->assertTrue(strpos($option->getOptions()[0]->getLabel(), 'Default Store View') !== false);
                 $nestedOptionExists = true;
             }
         }

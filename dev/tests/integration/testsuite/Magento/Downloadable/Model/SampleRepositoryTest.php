@@ -95,7 +95,7 @@ class SampleRepositoryTest extends \PHPUnit\Framework\TestCase
         $samples = $this->model->getSamples($product);
         $this->assertEmpty($samples->getData());
         $downloadableSampleData = [
-            'title' => 'Store ViewMovie Title',
+            'title' => 'Store View Title',
             'sort_order' => 1,
             'sample_url' => 'http://www.sample.example.com/',
             'sample_type' => 'url'

@@ -1,6 +1,6 @@
 <?php
 /**
- * Test for \Magento\Paypal\Block\Billing\Agreement\ViewMovie
+ * Test for \Magento\Paypal\Block\Billing\Agreement\View
  *
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
