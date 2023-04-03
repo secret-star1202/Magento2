@@ -63,7 +63,7 @@ class IndexerReindexCommandTest extends TestCase
     public function testReindexAll(): void
     {
         $status = $this->command->run($this->inputMock, $this->outputMock);
-        $this->assertEquals(Cli::RETURN_SUCCESS, $status, 'Display wasn\'t success');
+        $this->assertEquals(Cli::RETURN_SUCCESS, $status, 'Index wasn\'t success');
     }
 
     /**
@@ -75,6 +75,6 @@ class IndexerReindexCommandTest extends TestCase
     public function testReindexAllWhenSomethingIsWrong(): void
     {
         $status = $this->command->run($this->inputMock, $this->outputMock);
-        $this->assertEquals(Cli::RETURN_FAILURE, $status, 'Display didn\'t return failure code');
+        $this->assertEquals(Cli::RETURN_FAILURE, $status, 'Index didn\'t return failure code');
     }
 }

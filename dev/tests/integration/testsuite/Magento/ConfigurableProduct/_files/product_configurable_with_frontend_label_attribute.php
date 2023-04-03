@@ -20,7 +20,7 @@ $attributeRepository = $objectManager->create(AttributeRepositoryInterface::clas
 // Add frontend label to created attribute:
 $frontendLabelAttribute = $objectManager->get(FrontendLabel::class);
 $frontendLabelAttribute->setStoreId(1);
-$frontendLabelAttribute->setLabel('Default Store ViewMovie label');
+$frontendLabelAttribute->setLabel('Default Store View label');
 /** @var Config $eavConfig */
 $eavConfig = $objectManager->get(Config::class);
 $attribute = $eavConfig->getAttribute(Product::ENTITY, 'test_configurable');

@@ -179,7 +179,7 @@ class LinkRepositoryTest extends WebapiAbstract
             'isGlobalScopeContent' => false,
             'sku' => 'downloadable-product',
             'link' => [
-                'title' => 'Store ViewMovie Title',
+                'title' => 'Store View Title',
                 'sort_order' => 1,
                 'price' => 150,
                 'is_shareable' => 1,

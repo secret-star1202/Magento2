@@ -13,7 +13,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 
 /**
  * Factory Test
- * @magentoComponentsDir Magento/Framework/ViewMovie/_files/fallback
+ * @magentoComponentsDir Magento/Framework/View/_files/fallback
  * @magentoDbIsolation enabled
  */
 class RulePoolTest extends \PHPUnit\Framework\TestCase
@@ -150,11 +150,11 @@ class RulePoolTest extends \PHPUnit\Framework\TestCase
         $filesystem = $objectManager->get(\Magento\Framework\Filesystem::class);
         $libPath = rtrim($filesystem->getDirectoryRead(DirectoryList::LIB_WEB)->getAbsolutePath(), '/');
 
-        $themeOnePath = BP . '/dev/tests/integration/testsuite/Magento/Framework/ViewMovie/_files/fallback/design/frontend/'
+        $themeOnePath = BP . '/dev/tests/integration/testsuite/Magento/Framework/View/_files/fallback/design/frontend/'
             . 'Vendor/custom_theme';
-        $themeTwoPath = BP . '/dev/tests/integration/testsuite/Magento/Framework/ViewMovie/_files/fallback/design/frontend/'
+        $themeTwoPath = BP . '/dev/tests/integration/testsuite/Magento/Framework/View/_files/fallback/design/frontend/'
             . 'Vendor/default';
-        $modulePath = BP . '/dev/tests/integration/testsuite/Magento/Framework/ViewMovie/_files/fallback/app/code/'
+        $modulePath = BP . '/dev/tests/integration/testsuite/Magento/Framework/View/_files/fallback/app/code/'
             . 'ViewTest_Module';
 
         return [

@@ -42,7 +42,7 @@ class AttributeRepositoryTest extends TestCase
 
         $this->assertTrue(isset($result['options']['1']['value']));
         $this->assertEquals(
-            ['Default Store ViewMovie', 'Fixture Store'],
+            ['Default Store View', 'Fixture Store'],
             $this->getStoreViewLabels($result['options'][1]['value'])
         );
     }

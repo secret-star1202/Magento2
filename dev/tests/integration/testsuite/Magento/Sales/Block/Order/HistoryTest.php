@@ -156,11 +156,11 @@ class HistoryTest extends TestCase
                         $rowXpath . "/following-sibling::td/a[contains(@href, 'sales/order/view/order_id/%s')]"
                         . "/span[contains(text(), '%s')]",
                         $order->getId(),
-                        __('ViewMovie Order')
+                        __('View Order')
                     ),
                     $blockHtml
                 ),
-                sprintf('ViewMovie order button for order #%s wasn\'t found.', $orderIncrementId)
+                sprintf('View order button for order #%s wasn\'t found.', $orderIncrementId)
             );
             $this->assertEquals(
                 1,

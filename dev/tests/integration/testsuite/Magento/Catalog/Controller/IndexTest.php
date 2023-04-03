@@ -5,7 +5,7 @@
  */
 
 /**
- * Test class for \Magento\Catalog\Controller\Display.
+ * Test class for \Magento\Catalog\Controller\Index.
  */
 namespace Magento\Catalog\Controller;
 

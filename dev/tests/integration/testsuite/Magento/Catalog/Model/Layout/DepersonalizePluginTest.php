@@ -78,21 +78,21 @@ class DepersonalizePluginTest extends TestCase
     {
         return [
             'cacheable' => [
-                'layout' => INTEGRATION_TESTS_DIR . '/testsuite/Magento/Framework/ViewMovie/_files/layout/cacheable.xml',
+                'layout' => INTEGRATION_TESTS_DIR . '/testsuite/Magento/Framework/View/_files/layout/cacheable.xml',
                 'expectedResult' => [],
             ],
             'nonCacheable' => [
-                'layout' => INTEGRATION_TESTS_DIR . '/testsuite/Magento/Framework/ViewMovie/_files/layout/non_cacheable.xml',
+                'layout' => INTEGRATION_TESTS_DIR . '/testsuite/Magento/Framework/View/_files/layout/non_cacheable.xml',
                 'expectedResult' => ['some_data' => 1],
             ],
             'nonCacheableBlockWithoutReference' => [
                 'layout' => INTEGRATION_TESTS_DIR
-                    . '/testsuite/Magento/Framework/ViewMovie/_files/layout/non_cacheable_block_with_missing_refference.xml',
+                    . '/testsuite/Magento/Framework/View/_files/layout/non_cacheable_block_with_missing_refference.xml',
                 'expectedResult' => [],
             ],
             'nonCacheableBlockWithExistedReference' => [
                 'layout' => INTEGRATION_TESTS_DIR
-                    . '/testsuite/Magento/Framework/ViewMovie/_files/layout/non_cacheable_block_with_declared_reference.xml',
+                    . '/testsuite/Magento/Framework/View/_files/layout/non_cacheable_block_with_declared_reference.xml',
                 'expectedResult' => ['some_data' => 1],
             ],
         ];

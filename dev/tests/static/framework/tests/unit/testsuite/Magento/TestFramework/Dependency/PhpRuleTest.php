@@ -296,12 +296,12 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
             ],
             'getUrl from wildcard url within ignored Block class' => [
                 'Magento\Cms\Block\SomeClass',
-                '$this->getUrl("Catalog/*/ViewMovie")',
+                '$this->getUrl("Catalog/*/View")',
                 []
             ],
             'getUrl from wildcard url within ignored Model file' => [
                 'Magento\Cms\Model\SomeClass',
-                '$this->getUrl("Catalog/*/ViewMovie")',
+                '$this->getUrl("Catalog/*/View")',
                 []
             ],
             'getUrl with in admin controller for controllerName wildcard' => [

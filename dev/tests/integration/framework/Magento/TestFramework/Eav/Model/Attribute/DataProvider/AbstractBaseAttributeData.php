@@ -356,7 +356,7 @@ abstract class AbstractBaseAttributeData
                 'expected_data' => [
                     'frontend_label' => 'Test Attribute Update',
                     'store_labels' => [
-                        'default' => 'Default Store ViewMovie',
+                        'default' => 'Default Store View',
                         'fixture_second_store' => 'Fixture Second Store',
                         'fixture_third_store' => 'Fixture Third Store',
                     ],

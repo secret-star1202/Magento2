@@ -10,7 +10,7 @@ use Magento\Customer\Api\Data\CustomerInterfaceFactory;
 use Magento\Customer\Controller\RegistryConstants;
 
 /**
- * Magento\Customer\Block\Adminhtml\Edit\Tab\ViewMovie
+ * Magento\Customer\Block\Adminhtml\Edit\Tab\View
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @magentoAppArea adminhtml
@@ -81,12 +81,12 @@ class ViewTest extends \PHPUnit\Framework\TestCase
 
     public function testGetTabLabel()
     {
-        $this->assertEquals(__('Customer ViewMovie'), $this->_block->getTabLabel());
+        $this->assertEquals(__('Customer View'), $this->_block->getTabLabel());
     }
 
     public function testGetTabTitle()
     {
-        $this->assertEquals(__('Customer ViewMovie'), $this->_block->getTabTitle());
+        $this->assertEquals(__('Customer View'), $this->_block->getTabTitle());
     }
 
     /**

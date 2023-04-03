@@ -70,7 +70,7 @@ class BundleTest extends TestCase
     }
 
     /**
-     * Test for method \Magento\Bundle\Block\Catalog\Product\ViewMovie\Type\Bundle::getJsonConfig
+     * Test for method \Magento\Bundle\Block\Catalog\Product\View\Type\Bundle::getJsonConfig
      *
      * @return void
      */

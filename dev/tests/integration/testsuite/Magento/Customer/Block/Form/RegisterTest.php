@@ -187,7 +187,7 @@ class RegisterTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Set Region Provider ViewMovie Model.
+     * Set Region Provider View Model.
      *
      * @param Template $block
      * @return void

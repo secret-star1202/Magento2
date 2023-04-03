@@ -11,7 +11,7 @@ use Magento\Framework\Escaper;
 use Magento\TestFramework\Helper\Bootstrap;
 
 /**
- * Test for \Magento\Customer\Block\Adminhtml\Edit\Tab\ViewMovie\Cart
+ * Test for \Magento\Customer\Block\Adminhtml\Edit\Tab\View\Cart
  *
  * @magentoAppArea adminhtml
  */
