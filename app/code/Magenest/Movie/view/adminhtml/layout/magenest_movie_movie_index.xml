@@ -2,7 +2,7 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="magenest_movie_movies_listing"/>
+            <uiComponent name="magenest_movie_movie_listing"/>
         </referenceContainer>
     </body>
 </page>
