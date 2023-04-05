@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -8,29 +9,13 @@
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add New Movie</item>
+                <item name="label" xsi:type="string" translate="true">New Movie</item>
                 <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/new</item>
+                <item name="url" xsi:type="string">*/*/add</item>
             </item>
         </item>
     </argument>
-    <dataSource name="magenest_movie">
-        <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
-            <argument name="name" xsi:type="string">magenest_movie_movie_listing_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">movie_id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
-                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
-                    <item name="storageConfig" xsi:type="array">
-                        <item name="indexField" xsi:type="string">movie_id</item>
-                    </item>
-                </item>
-            </argument>
-        </argument>
-    </dataSource>
+
     <listingToolbar name="listing_top">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -38,10 +23,23 @@
             </item>
         </argument>
         <bookmark name="bookmarks"/>
-        <columnsControls name="columns_controls"/>
-        <exportButton name="export_button"/>
         <filters name="listing_filters" />
-        <filterSearch name="fulltext"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="provider" xsi:type="string">magenest_movie_movie_listing.magenest_movie_movie_listing_data_source</item>
+                    <item name="chipsProvider" xsi:type="string">magenest_movie_movie_listing.magenest_movie_movie_listing.listing_top.listing_filters_chips</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">magenest_movie_movie_listing.magenest_movie_movie_listing.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.search</item>
+                    </item>
+                </item>
+            </argument>
+        </filterSearch>
+
+        <paging name="listing_paging"/>
+        <exportButton name="export_button"/>
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -53,49 +51,77 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="magenest_movie/movie/massDelete"/>
+                        <item name="url" xsi:type="url" path="*/*/delete"/>
                         <item name="confirm" xsi:type="array">
-                            <item name="title" xsi:type="string" translate="true">Delete Movie</item>
+                            <item name="title" xsi:type="string" translate="true">Delete Row</item>
                             <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
                         </item>
                     </item>
                 </argument>
             </action>
         </massaction>
-        <paging name="listing_paging"/>
     </listingToolbar>
+
+    <dataSource name="magenest_movie">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">magenest_movie_movie_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">movie_id"</argument>
+            <argument name="requestFieldName" xsi:type="string">movie_id"</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">movie_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+
+    <!-- columns -->
     <columns name="spinner_columns">
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="resizeEnabled" xsi:type="boolean">false</item>
-                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
-                    <item name="indexField" xsi:type="string">Movie_id</item>
+                    <item name="indexField" xsi:type="string">movie_id</item>
                 </item>
             </argument>
         </selectionsColumn>
+
+        <!-- Column id -->
         <column name="movie_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
                     <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="label" xsi:type="string" translate="true">movie_id</item>
                 </item>
             </argument>
         </column>
+        <!-- Column title -->
         <column name="name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">magenest_movie</item>
+                    <item name="dataScope" xsi:type="string">name</item>
                     <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="filter" xsi:type="string">text</item>
                 </item>
             </argument>
         </column>
+
+        <actionsColumn name="actions" class="Magenest\Movie\Ui\Component\Listing\Columns\MovieActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">movie_id</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>
