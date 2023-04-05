@@ -23,7 +23,8 @@ class Index extends Action
         $resultPage = $this->resultPageFactory->create();
 //        $resultPage->setActiveMenu('Magenest_Movie::magenest_movie');
         $resultPage->getConfig()->getTitle()->prepend((__('Movies')));
-
+//
         return $resultPage;
+//        echo "hello";
     }
 }

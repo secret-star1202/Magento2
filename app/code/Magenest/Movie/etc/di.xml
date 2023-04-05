@@ -8,7 +8,7 @@
                 </item>
             </argument>
             <argument name="collections" xsi:type="array">
-                <item name="magenest_movie_movies_listing_data_source" xsi:type="string">
+                <item name="magenest_movie_movie_listing_data_source" xsi:type="string">
                     Magenest\Movie\Model\ResourceModel\Movie\Collection
                 </item>
             </argument>
