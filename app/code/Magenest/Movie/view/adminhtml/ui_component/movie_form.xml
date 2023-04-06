@@ -12,13 +12,26 @@
         </item>
         <item name="label" xsi:type="string" translate="true">General Information</item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
+<!--        <item name="layout" xsi:type="array">-->
+<!--            <item name="type" xsi:type="string">tabs</item>-->
+<!--            <item name="navContainerName" xsi:type="string">left</item>-->
+<!--        </item>-->
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="array">
+                <item name="name" xsi:type="string">save</item>
+                <item name="label" xsi:type="string" translate="true">Save</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/save</item>
+            </item>
+            <item name="back" xsi:type="array">
+                <item name="name" xsi:type="string">back</item>
+                <item name="label" xsi:type="string" translate="true">Back</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/index</item>
+            </item>
+        </item>
     </argument>
     <settings>
-        <buttons>
-            <button name="save" class="Magento\Cms\Block\Adminhtml\Block\Edit\SaveButton"/>
-            <button name="delete" class="Magento\Cms\Block\Adminhtml\Block\Edit\DeleteButton"/>
-            <button name="back" class="Magento\Cms\Block\Adminhtml\Block\Edit\BackButton"/>
-        </buttons>
         <namespace>movie_form</namespace>
         <dataScope>data</dataScope>
         <deps>
@@ -32,7 +45,7 @@
             </item>
         </argument>
         <settings>
-            <submitUrl path="cms/block/save"/>
+            <submitUrl path="movie/block/save"/>
         </settings>
         <dataProvider class="\Magenest\Movie\Model\Block\DataProvider" name="movie_form_data_source">
             <settings>
@@ -48,7 +61,7 @@
         <field name="movie_id" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">block</item>
+                    <item name="source" xsi:type="string">movie</item>
                 </item>
             </argument>
             <settings>
@@ -60,7 +73,7 @@
         <field name="title" sortOrder="20" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">block</item>
+                    <item name="source" xsi:type="string">movie</item>
                 </item>
             </argument>
             <settings>
@@ -68,7 +81,7 @@
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
                 <dataType>text</dataType>
-                <label translate="true">Block Title</label>
+                <label translate="true">Movie Name</label>
                 <dataScope>title</dataScope>
             </settings>
         </field>
