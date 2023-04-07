@@ -1,65 +1,41 @@
 <?php
-
+/**
+ *
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 namespace Magenest\Movie\Controller\Adminhtml\Movie;
 
-use Magenest\Movie\Model\MovieFactory;
-use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory;
-use Magento\Backend\App\Action;
-use Magento\Backend\Model\View\Result\RedirectFactory;
-use Magento\Ui\Component\MassAction\Filter;
+use Magento\Backend\Model\View\Result\Redirect;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 
-class Delete extends Action
+class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
-    private $movieFactory;
-    private $filter;
-    private $collectionFactory;
-    private $resultRedirect;
-
-    public function __construct(
-        Action\Context $context,
-        MovieFactory $movieFactory,
-        Filter $filter,
-        CollectionFactory $collectionFactory,
-        RedirectFactory $redirectFactory
-    ) {
-        parent::__construct($context);
-        $this->movieFactory = $movieFactory;
-        $this->filter = $filter;
-        $this->collectionFactory = $collectionFactory;
-        $this->resultRedirect = $redirectFactory;
-    }
-
     public function execute()
     {
-        $collection = $this->filter->getCollection($this->collectionFactory->create());
-
-        $total = 0;
-        $err = 0;
-        foreach ($collection->getItems() as $item) {
-            $deleteMovie = $this->movieFactory->create();
-            $deleteMovie->load($item->getData('movie_id'));
+        $resultRedirect = $this->resultRedirectFactory->create();
+        // check if we know what should be deleted
+        $id = $this->getRequest()->getParam('movie_id');
+        if ($id) {
             try {
-                $deleteMovie->delete();
-                $total++;
-            } catch (\Exception $exception) {
-                $err++;
+                // init model and delete
+                $model = $this->_objectManager->create(\Magenest\Movie\Model\Movie::class);
+                $model->load($id);
+                $model->delete();
+                // display success message
+                $this->messageManager->addSuccessMessage(__('You deleted the movie.'));
+                // go to grid
+                return $resultRedirect->setPath('*/*/');
+            } catch (\Exception $e) {
+                // display error message
+                $this->messageManager->addErrorMessage($e->getMessage());
+                // go back to edit form
+                return $resultRedirect->setPath('*/*/edit', ['movie_id' => $id]);
             }
         }
-
-        if ($total) {
-            $this->messageManager->addSuccessMessage(
-                __('A total of %1 record(s) have been deleted.', $total)
-            );
-        }
-
-        if ($err) {
-            $this->messageManager->addErrorMessage(
-                __(
-                    'A total of %1 record(s) haven\'t been deleted. Please see server logs for more details.',
-                    $err
-                )
-            );
-        }
-        return $this->resultRedirect->create()->setPath('movie/movie/index');
+        // display error message
+        $this->messageManager->addErrorMessage(__('We can\'t find a movie to delete.'));
+        // go to grid
+        return $resultRedirect->setPath('*/*/index');
     }
 }

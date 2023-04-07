@@ -2,59 +2,44 @@
 
 namespace Magenest\Movie\Controller\Adminhtml\Movie;
 
-use Magenest\Movie\Model\ResourceModel\MovieFactory;
-use Magento\Backend\App\Action;
-use Magento\Backend\Model\View\Result\RedirectFactory;
+use Magenest\Movie\Model\MovieFactory;
+use Magento\Framework\Exception\LocalizedException;
 
-class Save extends Action
+class Save extends \Magento\Backend\App\Action
 {
-    private $resultRedirect;
-    private $movieFactory;
+    protected $movieFactory;
 
     public function __construct(
-        Action\Context $context,
-        MovieFactory $movieFactory,
-        RedirectFactory $redirectFactory
+        \Magento\Backend\App\Action\Context $context,
+        MovieFactory                        $movieFactory,
     ) {
         parent::__construct($context);
         $this->movieFactory = $movieFactory;
-        $this->resultRedirect = $redirectFactory;
     }
 
     public function execute()
     {
+        $resultRedirect = $this->resultRedirectFactory->create();
+
         $data = $this->getRequest()->getPostValue();
-        $id = !empty($data["movie_id"]) ? $data["movie_id"] : null;
 
-        $newData = [
-            'name' => $data["name"],
-            'rating' => $data["rating"],
-            'description' => $data["description"],
-        ];
+        $model = $this->movieFactory->create();
 
-        if (!isset($data["name"])) {
-            $this->_redirect('movie/movie/index');
+        if (!empty($data['movie_id'])) {
+            try {
+                $id = $data['movie_id'];
+                $model = $model->load($id);
+            } catch (LocalizedException $e) {
+                $this->messageManager->addErrorMessage(__('This page no longer exists.'));
+                return $resultRedirect->setPath('*/*/');
+            }
+        } else {
+            unset($data['movie_id']);
         }
 
-        $newData = [
-            'name' => $data['name'],
-            'rating' => $data['rating'],
-            'description' => $data['description'],
-            'director_id' => $data['director_id'],
-        ];
+        $model->setData($data);
+        $model->save();
 
-        $movie = $this->movieFactory->create();
-        if ($id) {
-            $movie->load($id);
-        }
-
-        try {
-            $movie->addData($newData);
-            $this->_eventManager->dispatch('save_movie', ['movie' => $movie]);
-            $movie->save();
-            return $this->resultRedirect->create()->setPath('movie/movie/index');
-        } catch (\Exception $e) {
-            return $this->resultRedirect->create()->setPath('movie/movie/add');
-        }
+        return $this->resultRedirectFactory->create()->setPath('magenest_movie/movie/index');
     }
 }

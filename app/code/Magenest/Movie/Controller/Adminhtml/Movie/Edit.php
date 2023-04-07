@@ -20,7 +20,6 @@ class Edit extends \Magenest\Movie\Controller\Adminhtml\Movie implements HttpGet
     public function execute()
     {
         $id = $this->getRequest()->getParam('movie_id');
-
         $model = $this->getRequest()->getParam('movie_id');
         $model = $this->_objectManager->create(\Magenest\Movie\Model\Movie::class);
 
