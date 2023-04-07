@@ -1,55 +1,39 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\Cms\Block\Adminhtml\Block\Edit;
 
+namespace Magenest\Movie\Block\Adminhtml\Block\Edit;
 use Magento\Backend\Block\Widget\Context;
-use Magento\Cms\Api\BlockRepositoryInterface;
-use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
  * Class GenericButton
  */
 class GenericButton
 {
+
     /**
-     * @var Context
+     * Constructor
+     *
+     * @param Context $context
      */
     protected $context;
 
-    /**
-     * @var BlockRepositoryInterface
-     */
-    protected $blockRepository;
-
-    /**
-     * @param Context $context
-     * @param BlockRepositoryInterface $blockRepository
-     */
     public function __construct(
-        Context $context,
-        BlockRepositoryInterface $blockRepository
+        Context $context
     ) {
         $this->context = $context;
-        $this->blockRepository = $blockRepository;
     }
-
     /**
-     * Return CMS block ID
+     * Return movie ID
      *
      * @return int|null
      */
-    public function getBlockId()
+    public function getMovieId()
     {
-        try {
-            return $this->blockRepository->getById(
-                $this->context->getRequest()->getParam('block_id')
-            )->getId();
-        } catch (NoSuchEntityException $e) {
-        }
-        return null;
+        return $this->context->getRequest()->getParam('movie_id');
     }
 
     /**

@@ -13,7 +13,7 @@ class Movie extends AbstractModel implements IdentityInterface
 
     protected function _construct()
     {
-        $this->_init('Magenest\Movie\Model\ResourceModel\Actor');
+        $this->_init('Magenest\Movie\Model\ResourceModel\Movie');
     }
 
     public function getIdentities()

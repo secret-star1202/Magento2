@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\Cms\Block\Adminhtml\Block\Edit;
+namespace Magenest\Movie\Block\Adminhtml\Block\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
@@ -18,7 +18,7 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
     public function getButtonData()
     {
         $data = [];
-        if ($this->getBlockId()) {
+        if ($this->getId()) {
             $data = [
                 'label' => __('Delete Block'),
                 'class' => 'delete',
@@ -38,6 +38,6 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
      */
     public function getDeleteUrl()
     {
-        return $this->getUrl('*/*/delete', ['block_id' => $this->getBlockId()]);
+        return $this->getUrl('*/*/delete', ['movie_id' => $this->getId()]);
     }
 }
