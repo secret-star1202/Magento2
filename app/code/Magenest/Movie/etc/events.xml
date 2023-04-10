@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_save_before">
+        <observer name="magenest_movie_default_firstname_customer" instance="Magenest\Movie\Observer\DefaultFirstNameCustomer" />
+    </event>
+
+    <event name="default_rating_save_after">
+        <observer name="magenest_movie_set_rating_movie" instance="Magenest\Movie\Observer\DefaultRatingMovie" />
+    </event>
+</config>
