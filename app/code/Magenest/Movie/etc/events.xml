@@ -7,4 +7,9 @@
     <event name="magenest_movie_save_before">
         <observer name="magenest_movie_default_rating_movie" instance="Magenest\Movie\Observer\DefaultRatingMovie" />
     </event>
+
+    <event name="admin_system_config_changed_section_movie">
+        <observer name="admin_system_config_changed_section"
+                  instance="Magenest\Movie\Observer\EventSaveConfigTextField"/>
+    </event>
 </config>
