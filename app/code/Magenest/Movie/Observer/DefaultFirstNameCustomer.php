@@ -13,3 +13,4 @@ class DefaultFirstNameCustomer implements ObserverInterface
         $customer->setData('firstname', 'Magenest');
     }
 }
+

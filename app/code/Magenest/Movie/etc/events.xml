@@ -4,7 +4,7 @@
         <observer name="magenest_movie_default_firstname_customer" instance="Magenest\Movie\Observer\DefaultFirstNameCustomer" />
     </event>
 
-    <event name="default_rating_save_after">
-        <observer name="magenest_movie_set_rating_movie" instance="Magenest\Movie\Observer\DefaultRatingMovie" />
+    <event name="magenest_movie_save_before">
+        <observer name="magenest_movie_default_rating_movie" instance="Magenest\Movie\Observer\DefaultRatingMovie" />
     </event>
 </config>
