@@ -40,4 +40,8 @@
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor</argument>
         </arguments>
     </virtualType>
+
+    <type name="Magento\Checkout\CustomerData\AbstractItem">
+        <plugin name="Change_Product_Image_In_Checkout" type="Magenest\Movie\Plugin\Checkout\ChangeImage" sortOrder="1"/>
+    </type>
 </config>
