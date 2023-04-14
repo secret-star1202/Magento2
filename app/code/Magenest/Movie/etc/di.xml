@@ -44,4 +44,10 @@
     <type name="Magento\Checkout\CustomerData\AbstractItem">
         <plugin name="Change_Product_Image_In_Checkout" type="Magenest\Movie\Plugin\Checkout\ChangeImage" sortOrder="1"/>
     </type>
+
+    <type name="Magento\Checkout\Block\Cart\Item\Renderer">
+        <plugin name="Change_Product_Image_In_Checkout_Cart" type="Magenest\Movie\Plugin\Checkout\CheckoutCart" sortOrder="2"/>
+    </type>
+
+
 </config>
