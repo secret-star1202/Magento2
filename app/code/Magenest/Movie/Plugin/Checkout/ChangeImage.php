@@ -41,7 +41,7 @@ class ChangeImage
      */
     public function afterGetItemData(AbstractItem $subject, $result, $item)
     {
-        if ($result["product_type"]) {
+        if ($result["product_type"] && $result["product_type"] = "configurable") {
             $result["product_name"] = $result["product_sku"];
             $product = $this->productRepository->get($result["product_sku"]);
             $url = $this->product->getThumbnailUrl($product);
@@ -50,3 +50,4 @@ class ChangeImage
         return $result;
     }
 }
+
