@@ -63,7 +63,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
 
         $customerSetup->addAttribute(
             Customer::ENTITY,
-            'avatar',
+            'profile_picture',
             [
                 'label' => 'Avatar',
                 'input' => 'image',
@@ -82,7 +82,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
             ]
         );
 
-        $attribute = $customerSetup->getEavConfig()->getAttribute(Customer::ENTITY, 'avatar');
+        $attribute = $customerSetup->getEavConfig()->getAttribute(Customer::ENTITY, 'profile_picture');
         $attribute->addData([
             'used_in_forms' => [
                 'adminhtml_customer',
@@ -107,7 +107,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
         $this->moduleDataSetup->getConnection()->startSetup();
         /** @var CustomerSetup $customerSetup */
         $customerSetup = $this->customerSetupFactory->create(['setup' => $this->moduleDataSetup]);
-        $customerSetup->removeAttribute(Customer::ENTITY, 'avatar');
+        $customerSetup->removeAttribute(Customer::ENTITY, 'profile_picture');
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }

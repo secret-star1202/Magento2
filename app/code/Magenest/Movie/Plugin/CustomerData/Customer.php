@@ -47,8 +47,8 @@ class Customer
             return [];
         }
         $customer = $this->currentCustomer->getCustomer();
-        if (!empty($customer->getCustomAttribute('avatar'))) {
-            $file = $customer->getCustomAttribute('avatar')->getValue();
+        if (!empty($customer->getCustomAttribute('profile_picture'))) {
+            $file = $customer->getCustomAttribute('profile_picture')->getValue();
         } else {
             $file = '';
         }

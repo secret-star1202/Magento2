@@ -53,8 +53,8 @@ class Avatar extends \Magento\Ui\Component\Listing\Columns\Column
             $fieldName = $this->getData('name');
             foreach ($dataSource['data']['items'] as & $item) {
                 $customer = new \Magento\Framework\DataObject($item);
-                $picture_url = !empty($customer["avatar"]) ? $this->urlBuilder->getUrl(
-                    'customer/index/viewfile/image/' . base64_encode($customer["magenest"])
+                $picture_url = !empty($customer["profile_picture"]) ? $this->urlBuilder->getUrl(
+                    'customer/index/viewfile/image/' . base64_encode($customer["profile_picture"])
                 ) : $this->viewFileUrl->getUrl('Magenest_Movie::images/no-profile-photo.jpg');
                 $item[$fieldName . '_src'] = $picture_url;
                 $item[$fieldName . '_orig_src'] = $picture_url;

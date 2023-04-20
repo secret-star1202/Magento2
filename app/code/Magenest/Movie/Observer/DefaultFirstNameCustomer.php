@@ -9,8 +9,8 @@ class DefaultFirstNameCustomer implements ObserverInterface
 {
     public function execute(EventObserver $observer)
     {
-        $customer = $observer->getEvent()->getCustomer();
-        $customer->setData('firstname', 'Magenest');
+//        $customer = $observer->getEvent()->getCustomer();
+//        $customer->setData('firstname', 'Magenest');
     }
 }
 

@@ -20,12 +20,12 @@ class Avatar extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend
      */
     public function beforeSave($object)
     {
-            $validation = new Image();
+        $validation = new Image();
         $attrCode = $this->getAttribute()->getAttributeCode();
-        if ($attrCode == 'avatar') {
+        if ($attrCode == 'profile_picture') {
             if ($validation->isImageValid('tmpp_name', $attrCode) === false) {
                 throw new \Magento\Framework\Exception\LocalizedException(
-                    __('The avatar is not a valid image.')
+                    __('The profile picture is not a valid image.')
                 );
             }
         }

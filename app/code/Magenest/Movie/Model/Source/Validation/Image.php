@@ -6,7 +6,7 @@ class Image
 {
     public function isImageValid($tmp_name, $attrCode)
     {
-        if ($attrCode == 'avatar') {
+        if ($attrCode == 'profile_picture') {
             if (!empty($_FILES[$attrCode][$tmp_name])) {
                 $imageFile = @getimagesize($_FILES[$attrCode][$tmp_name]);
                 if ($imageFile === false) {
