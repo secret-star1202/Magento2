@@ -49,5 +49,11 @@
         <plugin name="Change_Product_Image_In_Checkout_Cart" type="Magenest\Movie\Plugin\Checkout\CheckoutCart" sortOrder="2"/>
     </type>
 
+    <type name="Magento\Customer\Model\Metadata\Form\Image">
+        <plugin name="Validate_Image" type="Magenest\Movie\Plugin\Metadata\Form\Image" sortOrder="1"/>
+    </type>
+    <type name="Magento\Customer\CustomerData\Customer">
+        <plugin name="customerData" type="Magenest\Movie\Plugin\CustomerData\Customer" sortOrder="1"/>
+    </type>
 
 </config>

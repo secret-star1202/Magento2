@@ -9,5 +9,8 @@
         <route id="movie" frontName="movie">
             <module name="Magenest_Movie" />
         </route>
+        <route id="viewfile" frontName="viewfile">
+            <module name="Magenest_Movie" />
+        </route>
     </router>
 </config>
