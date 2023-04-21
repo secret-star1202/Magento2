@@ -24,8 +24,7 @@ class Index extends Action
         // TODO: Implement execute() method.
         $director = $this->_directorFactory->create();
         $collection = $director->getCollection();
-        foreach ($collection as $item)
-        {
+        foreach ($collection as $item) {
             echo "<pre>";
             print_r($item->getData());
             echo "</pre>";

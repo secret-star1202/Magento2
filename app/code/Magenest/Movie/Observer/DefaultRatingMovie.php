@@ -14,7 +14,7 @@ class DefaultRatingMovie implements ObserverInterface
     }
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $movie = $observer->getEvent()->getObject();
-        $movie->setData('rating', '0');
+//        $movie = $observer->getEvent()->getObject();
+//        $movie->setData('rating', '0');
     }
 }

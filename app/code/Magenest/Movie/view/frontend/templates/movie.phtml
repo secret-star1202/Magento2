@@ -2,6 +2,7 @@
 
 /**
  * @var Magenest\Movie\Block\Display $block
+ * @var Magenest\Movie\Ui\Component\Listing\Columns\NameDirector $director
  */
 //echo $block->getRowsMovie();
 ?>
@@ -39,19 +40,25 @@
     <tr>
         <th class="Movie-id">Id</th>
         <th class="Movie-name">Movie Name</th>
+        <th class="Movie-name">Description</th>
+        <th class="Movie-name">Director Name</th>
+        <th class="Movie-name">Rating</th>
     </tr>
     <?php
     foreach ($block->getMovieCollection() as $key => $movie) {
         echo '<tr>
                     <td>' . $movie->getMovieId() . '</td>
                     <td>' . $movie->getName() . '</td>
+                    <td>' . $movie->getData('description') . '</td>
+                    <td>' . $movie->getData('director_id') . '</td>
+                    <td>' . $movie->getData('rating') . '</td>
                   </tr>';
     }
     ?>
 </table>
 
-    </br>
-    </br>
+</br>
+</br>
 <h2>Table Director</h2>
 <table>
     <tr>
