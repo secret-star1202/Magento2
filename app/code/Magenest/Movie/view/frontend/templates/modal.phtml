@@ -1,5 +1,83 @@
 <div>
     <button class="btn">Open Modal</button>
-    <button class="btn">Open Magento Login Modal</button>
-    <button class="btn">Open Custom Login Modal</button>
+    <button class="newclass">Open Magento Login Modal</button>
+    <button class="loginform">Open Custom Login Modal</button>
 </div>
+
+<div id="modal">
+    <div class="wrap-login">
+        <form>
+            <div class="wrap-login__label">
+                <label >Username: <input class="wrap-login__input" type="text" name="username"></label>
+            </div>
+            <div class="wrap-login__label">
+                <label>Password: <input class="wrap-login__input" type="password" name="password"></label>
+            </div>
+            <button class="wrap-login__submit" type="submit">Login</button>
+        </form>
+    </div>
+
+</div>
+
+
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+        'popupWindow'
+    ], function ($, alert) {
+        $(document).ready(function () {
+            $(".btn").on('click', function (event) {
+                event.preventDefault();
+                jQuery.ajax({
+                    success: function () {
+                        alert({
+                            title: 'Title',
+                            content: "Hello World"
+                        });
+                    }
+                });
+            });
+        });
+    })
+
+    require([
+        'jquery',
+        'popupWindow'
+    ], function ($) {
+        'use strict';
+        $(".newclass").popupWindow({
+            "windowURL": "http://local.magento.com/customer/account/login/",
+            "windowName": "Window Name",
+            "width": 800,
+            "height": 800,
+            "left": 0,
+            "top": 0,
+            "resizable": 1,
+            "scrollbars": 1
+        });
+    });
+
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ], function ($, modal) {
+        var options = {
+            type: 'popup',
+            responsive: true,
+            title: 'Login',
+            buttons: [{
+                text: $.mage.__('Ok'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#modal'));
+        $(".loginform").click(function () {
+            $('#modal').modal('openModal');
+        });
+    });
+</script>

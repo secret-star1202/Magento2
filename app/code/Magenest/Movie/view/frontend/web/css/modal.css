@@ -1,3 +1,35 @@
 .btn {
     margin-left: 30px;
 }
+.newclass {
+    margin-left: 30px;
+}
+.loginform {
+    margin-left: 30px;
+}
+
+.wrap-login {
+    margin: auto;
+    width: 50%;
+    border: 1px solid #0a0a0a;
+    padding: 50px;
+}
+
+.wrap-login__label {
+    margin-top: 20px;
+}
+
+.wrap-login__input {
+    margin-top: 10px;
+}
+
+.wrap-login__submit {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.wrap-login__submit:hover {
+    background-color: #0fa7ff;
+    transition: linear 0.5s;
+}
