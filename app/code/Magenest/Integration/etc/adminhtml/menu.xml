@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magenest_Integration::Integration" title="Integration" module="Magenest_Integration" sortOrder="50"
+             translate="title"
+             resource="Magenest_Integration::integration"/>
+
+        <add id="Magenest_Integration::xero_intergration" title="Xero Intergration" module="Magenest_Integration"
+             sortOrder="10"
+             translate="title"
+             resource="Magenest_Intergration::xero_intergration" parent="Magenest_Integration::Integration"/>
+
+        <add id="Magenest_Integration::view_logs" title="View Logs" module="Magenest_Integration" sortOrder="10"
+             translate="title"
+             dependsOnModule="Magenest_Integration"
+             action="magenest_integration/view_logs" resource="Magenest_Intergration::view_logs"
+             parent="Magenest_Integration::xero_intergration"/>
+
+        <add id="Magenest_Integration::queue_list" title="Queue List" module="Magenest_Integration" sortOrder="10"
+             translate="title"
+             dependsOnModule="Magenest_Integration"
+             action="magenest_integration/queue_list" resource="Magenest_Intergration::queue_list"
+             parent="Magenest_Integration::xero_intergration"/>
+
+        <add id="Magenest_Integration::request_daily_report" title="Request Daily Report" module="Magenest_Integration"
+             sortOrder="10"
+             translate="title"
+             dependsOnModule="Magenest_Integration"
+             action="magenest_integration/request" resource="Magenest_Intergration::request_daily_report"
+             parent="Magenest_Integration::xero_intergration"/>
+
+        <add id="Magenest_Integration::configuration" title="Configuration" module="Magenest_Integration" sortOrder="10"
+             translate="title"
+             dependsOnModule="Magenest_Integration"
+             action="magenest_integration/view_logs" resource="Magenest_Intergration::configuration"
+             parent="Magenest_Integration::xero_intergration"/>
+
+        <add id="Magenest_Integration::xero_bank_account_mapping" title="Xero Bank Account Mapping" module="Magenest_Integration"
+             sortOrder="20"
+             translate="title"
+             resource="Magenest_Intergration::xero_bank_account_mapping" parent="Magenest_Integration::Integration"/>
+
+        <add id="Magenest_Integration::payment_mapping" title="Payment Mapping" module="Magenest_Integration" sortOrder="10"
+             translate="title"
+             dependsOnModule="Magenest_Integration"
+             action="magenest_integration/payment_mapping" resource="Magenest_Intergration::payment_mapping"
+             parent="Magenest_Integration::xero_bank_account_mapping"/>
+
+        <add id="Magenest_Integration::xero_store_view" title="Xero Store View, Tracking Category Mapping" module="Magenest_Integration"
+             sortOrder="30"
+             translate="title"
+             resource="Magenest_Intergration::xero_store_view" parent="Magenest_Integration::Integration"/>
+
+        <add id="Magenest_Integration::store_view" title="Store View Mapping" module="Magenest_Integration" sortOrder="10"
+             translate="title"
+             dependsOnModule="Magenest_Integration"
+             action="magenest_integration/store_view" resource="Magenest_Intergration::store_view"
+             parent="Magenest_Integration::xero_store_view"/>
+    </menu>
+</config>
