@@ -109,8 +109,8 @@
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                         <item name="validate-number" xsi:type="boolean">true</item>
-                        <item name="less-than-equals-to" xsi:type="number">100</item>
-                        <item name="greater-than-equals-to" xsi:type="number">0</item>
+                        <item name="less-than-equals-to" xsi:type="number">5</item>
+                        <item name="greater-than-equals-to" xsi:type="number">1</item>
                     </item>
                 </item>
             </argument>

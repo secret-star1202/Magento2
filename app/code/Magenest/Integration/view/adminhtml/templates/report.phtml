@@ -1,0 +1,67 @@
+<?php
+/**
+ *
+ * @var $block Magenest\Integration\Block\Adminhtml\Report
+ */
+
+$contAllModule = $block->CountAllModule();
+$countModuleNotMagento = $block->countModuleNotMagento();
+$countCustomer = $block->countCustomer();
+$countInvoice = $block->countInvoice();
+$countProduct = $block->countProduct();
+$countCreditmemo = $block->countCreditmemo();
+$countOrder = $block->countOrder();
+?>
+<div class="admin__page-section-title">
+    <span class="title">
+        Request Made Today!
+    </span>
+</div>
+<div class="admin__page-section-content">
+    <div class="col-m-5">
+        <div class="admin__page-section-item-title">
+            <span class="title">Total Request Today</span>
+        </div>
+        <table class="admin__table-secondary">
+            <tr>
+                <td>Numbers of module installed in Website</td>
+                <td><?= $contAllModule ?></td>
+            </tr>
+            <tr>
+                <td>'Numbers of module installed in Magneto but belonged to another Vendor</td>
+                <td><?= $countModuleNotMagento ?></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-6 col-l-offset-6">
+        <div class="admin__page-section-item-title">
+            <span class="title">Detail</span>
+        </div>
+        <table class="admin__table-secondary">
+            <tr>
+                <td>Customer Request</td>
+                <td><?= $countCustomer ?></td>
+            </tr>
+            <tr>
+                <td>Product Request</td>
+                <td><?= $countProduct ?></td>
+            </tr>
+            <tr>
+                <td>Order Request</td>
+                <td><?= $countOrder ?></td>
+            </tr>
+            <tr>
+                <td>Invoice Request</td>
+                <td><?= $countInvoice ?></td>
+            </tr>
+            <tr>
+                <td>Creditmemo Request</td>
+                <td><?= $countCreditmemo ?></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
