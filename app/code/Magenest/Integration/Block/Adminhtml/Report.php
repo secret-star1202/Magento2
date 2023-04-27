@@ -37,6 +37,18 @@ class Report extends Template
         return count($this->fullModuleList->getAll());
     }
 
+    public function countModuleNotMagento()
+    {
+        $count = 0;
+        $datas = $this->fullModuleList->getNames();
+        foreach ($datas as $data) {
+            if (!str_contains($data, "Magento_")) {
+                $count++;
+            }
+        }
+        return $count;
+    }
+
     public function countCustomer()
     {
         return $this->customerCollectionFacory->count();
@@ -62,15 +74,5 @@ class Report extends Template
         return $this->creditmemoCollectionFactory->count();
     }
 
-    public function countModuleNotMagento()
-    {
-        $count = 0;
-        $datas = $this->fullModuleList->getNames();
-        foreach ($datas as $data) {
-            if (!preg_match("/Magento_/", $data)) {
-                $count++;
-            }
-        }
-        return $count;
-    }
+
 }
