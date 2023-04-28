@@ -42,11 +42,13 @@
     </virtualType>
 
     <type name="Magento\Checkout\CustomerData\AbstractItem">
-        <plugin name="Change_Product_Image_In_Checkout" type="Magenest\Movie\Plugin\Checkout\ChangeImage" sortOrder="1"/>
+        <plugin name="Change_Product_Image_In_Checkout" type="Magenest\Movie\Plugin\Checkout\ChangeImage"
+                sortOrder="1"/>
     </type>
 
     <type name="Magento\Checkout\Block\Cart\Item\Renderer">
-        <plugin name="Change_Product_Image_In_Checkout_Cart" type="Magenest\Movie\Plugin\Checkout\CheckoutCart" sortOrder="2"/>
+        <plugin name="Change_Product_Image_In_Checkout_Cart" type="Magenest\Movie\Plugin\Checkout\CheckoutCart"
+                sortOrder="2"/>
     </type>
 
     <type name="Magento\Customer\Model\Metadata\Form\Image">
@@ -55,5 +57,4 @@
     <type name="Magento\Customer\CustomerData\Customer">
         <plugin name="customerData" type="Magenest\Movie\Plugin\CustomerData\Customer" sortOrder="1"/>
     </type>
-
 </config>
