@@ -60,7 +60,7 @@ class AddDateLimitProductAttribute implements DataPatchInterface, PatchRevertabl
                 'label' => 'Date Start',
                 'input' => 'datetime',
                 'frontend' => 'Magento\Eav\Model\Entity\Attribute\Frontend\Datetime',
-                'class' => 'validate-date validate-date-range date-range-from',
+                'frontend_class' => 'validate-date validate-date-range date-range-from',
                 'backend' => Startdate::class,
                 'visible' => true,
                 'required' => false,
@@ -77,6 +77,7 @@ class AddDateLimitProductAttribute implements DataPatchInterface, PatchRevertabl
                 'comparable' => false,
                 'visible_on_front' => false,
                 'unique' => false,
+                'validate_rules' => '{"input_validation":"date", "min_date":"2000-01-08", "max_date":"2038-01-12"}',
             ],
         );
         $categorySetup->addAttribute(
@@ -87,7 +88,7 @@ class AddDateLimitProductAttribute implements DataPatchInterface, PatchRevertabl
                 'label' => 'To',
                 'input' => 'datetime',
                 'frontend' => 'Magento\Eav\Model\Entity\Attribute\Frontend\Datetime',
-                'class' => 'validate-date validate-date-range date-range-from',
+                'frontend_class' => 'validate-date validate-date-range date-range-from',
                 'backend' => Datetime::class,
                 'visible' => true,
                 'required' => false,
@@ -104,6 +105,7 @@ class AddDateLimitProductAttribute implements DataPatchInterface, PatchRevertabl
                 'comparable' => false,
                 'visible_on_front' => false,
                 'unique' => false,
+                'validate_rules' => '{"input_validation":"date", "min_date":"2000-01-08", "max_date":"2038-01-12"}',
             ]
         );
         return $this;

@@ -37,8 +37,7 @@ class PreSellDesignUpdate extends AbstractModifier
         LocatorInterface             $locator,
         ArrayManager                 $arrayManager,
         AttributeRepositoryInterface $attributeRepository = null
-    )
-    {
+    ) {
         $this->locator = $locator;
         $this->arrayManager = $arrayManager;
         $this->attributeRepository = $attributeRepository
@@ -102,6 +101,10 @@ class PreSellDesignUpdate extends AbstractModifier
                 [
                     'label' => __('Time Start'),
                     'additionalClasses' => 'admin__field-date',
+                    'options' => [
+                        "minDate" => "-20",
+                        "maxDate" => "-16"
+                    ]
                 ]
             );
             $meta = $this->arrayManager->merge(
@@ -111,6 +114,11 @@ class PreSellDesignUpdate extends AbstractModifier
                     'label' => __('To'),
                     'scopeLabel' => null,
                     'additionalClasses' => 'admin__field-date',
+                    'options' => [
+                        "minDate" => "-20",
+                        "maxDate" => "-16"
+                    ]
+//                    'component' => 'Magenest_Movie/js/customDateTime'
                 ]
             );
             $meta = $this->arrayManager->merge(
