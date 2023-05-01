@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Magenest\Movie\Block\Widget\Test" id="orange_test_widget">
+        <label>My New Widget</label>
+        <description>This is a test widget!!!</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Label</label>
+            </parameter>
+            <parameter name="size" xsi:type="select" visible="true" required="true" sort_order="20">
+                <label translate="true">Size</label>
+                <options>
+                    <option name="s" value="S">
+                        <label>S</label>
+                    </option>
+                    <option name="m" value="M" selected="true">
+                        <label>M</label>
+                    </option>
+                    <option name="l" value="L">
+                        <label>L</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
+
