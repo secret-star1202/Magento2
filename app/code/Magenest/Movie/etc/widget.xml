@@ -24,5 +24,28 @@
             </parameter>
         </parameters>
     </widget>
-</widgets>
+
+    <widget id="magenest_movie"
+            class="Magenest\Movie\Block\Widget\Banner"
+            placeholder_image="Magenest_Movie::images/banner.jpg">
+
+        <label translate="true">Banner</label>
+        <description translate="true">Banner with the Title and Subtitle</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="subtitle" xsi:type="text" visible="true">
+                <label translate="true">Subtitle</label>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="widget/showcase.phtml" selected="true">
+                        <label translate="true">Showcase Banner Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget></widgets>
 
