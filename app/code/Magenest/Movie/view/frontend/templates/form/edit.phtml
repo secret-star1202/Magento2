@@ -8,6 +8,9 @@ use Magento\Customer\Block\Widget\Name;
 
 /** @var \Magento\Customer\Block\Form\Edit $block */
 /** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+$customer = $block->getCustomer();
+$telephone = $customer->getCustomAttribute('telephone');
+
 ?>
 <form class="form form-edit-account"
       action="<?= $block->escapeUrl($block->getUrl('customer/account/editPost')) ?>"
@@ -45,6 +48,11 @@ use Magento\Customer\Block\Widget\Name;
         <?php if ($_gender->isEnabled()): ?>
             <?= $_gender->setGender($block->getCustomer()->getGender())->toHtml() ?>
         <?php endif ?>
+        <div class="field required">
+            <label for="telephone" class="label"><span><?= $block->escapeHtml(__('Telephone')) ?></span></label>
+            <div class="control">
+                <input type="text" name="telephone" id="telephone" value="<?php if ($telephone != null): ?><?= $telephone->getValue() ?><?php endif ?>" title="<?= $block->escapeHtmlAttr(__('Telephone')) ?>" data-mage-init='{"mage/trim-input":{}}' class="input-text" data-validate="{required:true, minlength:10, 'validate-number':true, 'aureatelabsvalidationrule':true}">
+            </div>
         <div class="field choice">
             <input type="checkbox" name="change_email" id="change-email" data-role="change-email" value="1"
                    title="<?= $block->escapeHtmlAttr(__('Change Email')) ?>" class="checkbox" />
