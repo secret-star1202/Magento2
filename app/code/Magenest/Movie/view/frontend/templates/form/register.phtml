@@ -33,6 +33,12 @@ $formData = $block->getFormData();
         <br>
         <input type="hidden" name="success_url" value="<?= $escaper->escapeUrl($block->getSuccessUrl()) ?>">
         <input type="hidden" name="error_url" value="<?= $escaper->escapeUrl($block->getErrorUrl()) ?>">
+        <div class="field required">
+            <label for="telephone" class="label"><span><?= $block->escapeHtml(__('Telephone')) ?></span></label>
+            <div class="control">
+                <input type="text" name="telephone" id="telephone" value="" title="" data-mage-init='{"mage/trim-input":{}}' class="input-text" data-validate="{required:true, minlength:10, 'validate-number':true, 'aureatelabsvalidationrule':true}">
+            </div>
+        </div>
         <?= $block->getLayout()
             ->createBlock(\Magento\Customer\Block\Widget\Name::class)
             ->setObject($formData)
@@ -81,6 +87,10 @@ $formData = $block->getFormData();
         <?php $_taxvat = $block->getLayout()->createBlock(\Magento\Customer\Block\Widget\Taxvat::class) ?>
         <?php if ($_taxvat->isEnabled()): ?>
             <?= $_taxvat->setTaxvat($formData->getTaxvat())->toHtml() ?>
+        <?php endif ?>
+        <?php $_telephone = $block->getLayout()->createBlock(\Magento\Customer\Block\Widget\Telephone::class) ?>
+        <?php if ($_telephone->isEnabled()): ?>
+            <?= $_telephone->setTelephone($formData->getTelephone())->toHtml() ?>
         <?php endif ?>
 
         <?php $_gender = $block->getLayout()->createBlock(\Magento\Customer\Block\Widget\Gender::class) ?>
