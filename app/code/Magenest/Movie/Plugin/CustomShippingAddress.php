@@ -18,7 +18,7 @@ class CustomShippingAddress
 
     public function __construct(
         \Magento\Framework\Controller\Result\RedirectFactory $resultRedirectFactory,
-        \Intern\Chapter9\Model\Region\Attribute\Source\Mode $option,
+        \Magenest\Movie\Model\Region\Attribute\Source\Mode $option,
         MessageManagerInterface $messageManager
     ) {
         $this->option = $option;
