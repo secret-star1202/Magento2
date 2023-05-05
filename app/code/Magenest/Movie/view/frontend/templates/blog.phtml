@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @var Magenest\Movie\Block\Blog $block
+ */
+//echo $block->getRowsMovie();
+?>
+
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .post-id {
+        width: 2%
+    }
+
+    .post-name {
+        width: 30%
+    }
+
+</style>
+<h2>Table Movie</h2>
+<table>
+    <tr>
+        <th class="Blog-id">Id</th>
+        <th class="Blog-name">Author Name</th>
+        <th class="Blog-name">Author Email</th>
+        <th class="Blog-name">Title</th>
+        <th class="Blog-name">Description</th>
+        <th class="Blog-name">Content</th>
+        <th class="Blog-name">Url Rewrite</th>
+        <th class="Blog-name">Rating</th>
+        <th class="Blog-name">Status</th>
+        <th class="Blog-name">Create_at</th>
+        <th class="Blog-name">Update_at</th>
+    </tr>
+    <?php
+    foreach ($block->getBlogCollection() as $key => $movie) {
+        echo '<tr>
+                    <td>' . $movie->getId() . '</td>
+                    <td>' . $movie->getData('admin_user_username') . '</td>
+                    <td>' . $movie->getData('admin_user_email') . '</td>
+                    <td>' . $movie->getData('title') . '</td>
+                    <td>' . $movie->getData('description') . '</td>
+                    <td>' . $movie->getData('content') . '</td>
+                    <td>' . $movie->getData('url_rewrite') . '</td>
+                    <td>' . $movie->getData('rating') . '</td>
+                    <td>' . $movie->getData('status') . '</td>
+                    <td>' . $movie->getData('create_at') . '</td>
+                    <td>' . $movie->getData('update_at') . '</td>
+                  </tr>';
+    }
+    ?>
+</table>
+
+
