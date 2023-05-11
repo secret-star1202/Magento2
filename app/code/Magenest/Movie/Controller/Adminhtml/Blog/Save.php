@@ -4,13 +4,14 @@ namespace Magenest\Movie\Controller\Adminhtml\Blog;
 
 use Magenest\Movie\Model\BlogFactory;
 use Magenest\Movie\Model\ResourceModel\Blog\CollectionFactory as BlogCollectionFatory;
+use Magento\UrlRewrite\Model\UrlRewriteFactory;
 
 class Save extends \Magento\Backend\App\Action
 {
-
     /**
      * @var UrlRewriteFactory
      */
+
     protected $_urlRewriteFactory;
 
     /**
@@ -21,10 +22,10 @@ class Save extends \Magento\Backend\App\Action
     protected $_blogCollectionFactory;
 
     public function __construct(
-        \Magento\Backend\App\Action\Context                       $context,
-        BlogFactory                                               $blogFactory,
-        BlogCollectionFatory                                      $blogCollectionFactory,
-        \Magento\UrlRewrite\Model\UrlRewriteFactory $urlRewriteFactory
+        \Magento\Backend\App\Action\Context $context,
+        BlogFactory                         $blogFactory,
+        BlogCollectionFatory                $blogCollectionFactory,
+        UrlRewriteFactory                   $urlRewriteFactory
     ) {
         parent::__construct($context);
         $this->_urlRewriteFactory = $urlRewriteFactory;
@@ -38,10 +39,10 @@ class Save extends \Magento\Backend\App\Action
     public function execute()
     {
         $urlRewrite = $this->_urlRewriteFactory->create();
-        $urlRewrite->setEntityType('custom');
+//        $urlRewrite->setEntityType('custom');
 
-//        $urlRewrite->setStoreId(1);
-//        $urlRewrite->setIsSystem(0);
+        $urlRewrite->setStoreId(1);
+
         $collection = $this->_blogCollectionFactory->create();
 
         $resultRedirect = $this->resultRedirectFactory->create();
@@ -72,15 +73,19 @@ class Save extends \Magento\Backend\App\Action
             $model->setData($data);
 //            $model->save();
             $this->messageManager->addSuccessMessage(__('Save susscess.'));
-            $page = [
-                'entity_type' => 'view',
-                'entity_id' => $model->getData('id'),
-                'request_path' => $model->getData('url_rewrite'),
-                'target_path' => 'magenest_movie/blog/edit/id/' . $model->getData('id'),
-                'store_id' => 1
-            ];
-//            $urlRewrite->addData($page);
-//            $urlRewrite->save();
+//            $page = [
+//                'entity_type' => 'view',
+//                'entity_id' => $model->getData('id'),
+//                'request_path' => $model->getData('url_rewrite'),
+//                'target_path' => 'blog/edit/id/' . $model->getData('id'),
+//                'store_id' => 1
+//            ];
+
+            $urlRewrite->setTargetPath('movie/blog/view/id/' . $model->getData('id'));
+            $urlRewrite->setRequestPath($model->getData('url_rewrite'));
+
+//            $urlRewrite->addData($editpage);
+            $urlRewrite->save();
 
             return $this->resultRedirectFactory->create()->setPath('magenest_movie/blog/index');
         }
