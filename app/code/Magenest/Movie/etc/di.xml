@@ -17,6 +17,11 @@
                     Magenest\Movie\Model\ResourceModel\Actor\Collection
                 </item>
             </argument>
+            <argument name="collections" xsi:type="array">
+                <item name="magenest_movie_blog_listing_data_source" xsi:type="string">
+                    Magenest\Movie\Model\ResourceModel\Blog\Collection
+                </item>
+            </argument>
         </arguments>
     </type>
     <virtualType name="Magenest\Movie\Model\ResourceModel\Director\Collection"
@@ -40,6 +45,13 @@
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor</argument>
         </arguments>
     </virtualType>
+    <virtualType name="Magenest\Movie\Model\ResourceModel\Blog\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_blog</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Blog</argument>
+        </arguments>
+    </virtualType>
 
     <type name="Magento\Checkout\CustomerData\AbstractItem">
         <plugin name="Change_Product_Image_In_Checkout" type="Magenest\Movie\Plugin\Checkout\ChangeImage"
@@ -57,4 +69,6 @@
     <type name="Magento\Customer\CustomerData\Customer">
         <plugin name="customerData" type="Magenest\Movie\Plugin\CustomerData\Customer" sortOrder="1"/>
     </type>
+
+    <preference for="Magenest\Movie\Api\BlogRepositoryInterface" type="Magenest\Movie\Model\Api\Blog"/>
 </config>

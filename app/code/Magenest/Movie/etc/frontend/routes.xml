@@ -12,5 +12,8 @@
         <route id="viewfile" frontName="viewfile">
             <module name="Magenest_Movie" />
         </route>
+        <route frontName="blog" id="blog">
+            <module name="Magenest_Movie"/>
+        </route>
     </router>
 </config>
