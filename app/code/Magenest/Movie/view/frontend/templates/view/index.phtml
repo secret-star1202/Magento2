@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var Index $block
+ */
+
+use Magenest\Movie\Block\View\Index;
+
+?>
+<?php
+$blog = $block->getInfoBlog();
+if ($blog != null) {
+    ?>
+    <h1>Title: <?php echo $blog['title'] ?></h1>
+    <p>Author: <?php echo $blog['author_id'] ?></p>
+    <br>
+    <p>Description: <?php echo $blog['description'] ?></p>
+    <br>
+    <p>Content: <?php echo $blog['content'] ?></p>
+    <br>
+    <p>Url Rewrite: <?php echo $blog['url_rewrite'] ?></p>
+    <br>
+    <p>Rating: <?php echo $blog['rating'] ?></p>
+    <br>
+    <p>Create At: <?php echo $blog['create_at']; ?></p>
+
+    <?php
+} ?>
