@@ -8,6 +8,8 @@
         <add id="Magenest_Movie::movie" title="Movie" module="Magenest_Movie" sortOrder="10" action="magenest_movie/movie" resource="Magenest_Movie::movie" parent="Magenest_Movie::Movie"/>
 
         <add id="Magenest_Movie::actor" title="Actor" module="Magenest_Movie" sortOrder="10" action="magenest_movie/actor" resource="Magenest_Movie::actor" parent="Magenest_Movie::Movie"/>
+
+        <add id="Magenest_Movie::blog" title="Blog" module="Magenest_Movie" sortOrder="10" action="magenest_movie/blog" resource="Magenest_Movie::blog" parent="Magenest_Movie::Movie"/>
     </menu>
 </config>
 
