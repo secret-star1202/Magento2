@@ -43,6 +43,11 @@
                     </depends>
                 </field>
 
+                <field id="coupon" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0">
+                    <label>Coupon</label>
+                    <source_model>Magenest\Movie\Model\Config\Source\Options</source_model>
+                </field>
+
                 <field id="button_reload" translate="label comment" type="button" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\Form\Button</frontend_model>
                 </field>

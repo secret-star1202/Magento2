@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"/>
+        <css src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magenest\Movie\Block\Widget\Banner" name="index.home" template="Magenest_Movie::index/popup.phtml"/>
+        </referenceContainer>
+<!--        <block class="Magenest\Movie\Block\Widget\Banner" name="customer_account_dashboard_group"-->
+<!--               template="Magenest_Movie::customer_group.phtml"/>-->
+    </body>
+</page>
