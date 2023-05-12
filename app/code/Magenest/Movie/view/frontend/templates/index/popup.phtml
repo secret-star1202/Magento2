@@ -1,0 +1,34 @@
+<?php
+/** @var Banner $block */
+
+use Magenest\Movie\Block\Widget\Banner;
+
+?>
+
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/modal'], function ($, modal) {
+        let hasShownPopup = localStorage.getItem('<?= $block->getCustomerId() ?>');
+        if (hasShownPopup) {
+            // Hiển thị popup
+            let popup = $('<div/>').html('<div>Coupon: <?php
+                foreach ($block->getCouponCodes() as $result) {
+                    echo '<p>' . $result['name'] . '</p>';
+                } ?></div>');
+            let options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+
+            };
+            var popupModal = modal(options, popup);
+            popupModal.openModal();
+
+            //if (!customerData().isLoggedIn()) {
+            //    // Xóa localStorage nếu không đăng nhập
+            //    window.localStorage.removeItem('<?php //= $block->getCustomerId()?>//');
+            //}
+        }
+    });
+
+</script>
+

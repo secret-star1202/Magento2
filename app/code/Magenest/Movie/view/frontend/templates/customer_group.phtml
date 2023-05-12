@@ -7,6 +7,45 @@ use Magenest\Movie\Block\Widget\Banner;
 <div class="box-content">
     <p>
         Customer Group: <?= $block->getCustomerGroup() ?>
-
     </p>
+    <div>Coupon: <?php
+        foreach ($block->getCouponCodes() as $result) {
+            echo '<p>' . $result['name'] . '</p>';
+        } ?></div>
 </div>
+
+
+<script>// Kiểm tra xem popup đã được hiển thị hay chưa
+    require(['jquery', 'Magento_Ui/js/modal/modal'], function ($, modal) {
+        let hasShownPopup = localStorage.getItem('<?= $block->getCustomerId() ?>');
+
+        if (!hasShownPopup) {
+            // Hiển thị popup
+            let popup = $('<div/>').html('Nội dung của popup');
+            let options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                buttons: [{
+                    text: $.mage.__('Đồng ý'),
+                    class: '',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+            var popupModal = modal(options, popup);
+            popupModal.openModal();
+
+            // Lưu trữ thông tin về việc popup đã được hiển thị
+            localStorage.setItem('<?= $block->getCustomerId() ?>', true);
+
+            if (!customerData().isLoggedIn()) {
+                // Xóa localStorage nếu không đăng nhập
+                window.localStorage.removeItem('<?= $block->getCustomerId() ?>');
+            }
+        }
+    });
+
+</script>
+
