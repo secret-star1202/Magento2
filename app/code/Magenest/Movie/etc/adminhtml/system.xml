@@ -17,7 +17,8 @@
                        showInStore="0">
                     <label>Text Field</label>
                 </field>
-                <field id="enable_yes_no" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0"
+                <field id="enable_yes_no" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0"
                        showInStore="0">
                     <label><![CDATA[<span>Yes/No_Field_</span><span class="colorRed">abcd</span>]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -48,10 +49,32 @@
                     <source_model>Magenest\Movie\Model\Config\Source\Options</source_model>
                 </field>
 
-                <field id="button_reload" translate="label comment" type="button" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" >
+                <field id="button_reload" translate="label comment" type="button" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
                     <frontend_model>Magenest\Movie\Block\Adminhtml\System\Config\Form\Button</frontend_model>
                 </field>
             </group>
+
+
         </section>
+
+        <section id="colorheader" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1">
+            <class>magenest</class>
+            <label>Color</label>
+            <tab>magenest</tab>
+            <resource>Magenest_BuyNow::config</resource>
+            <group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Setup</label>
+                <attribute type="expanded">1</attribute>
+                <field id="coloroption" translate="label comment" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Color Option</label>
+                    <frontend_model>Magenest\Movie\Block\Adminhtml\Form\Field\Ranges</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+
     </system>
 </config>

@@ -1,0 +1,46 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Currency switcher
+ *
+ * @var \Magenest\Movie\Block\ColorHeader $block
+ */
+
+?>
+<?php $colorOptions = $block->getColor(); ?>
+<div class="switcher colorheader switcher-colorheader" id="switcher-colorheader">
+    <strong class="label switcher-label"><span><?= $block->escapeHtml(__('Color Header')) ?></span></strong>
+    <div class="actions dropdown options switcher-options">
+        <div class="action toggle switcher-trigger"
+             id="switcher-colorheader-trigger"
+             data-mage-init='{"dropdown":{}}'
+             data-toggle="dropdown"
+             data-trigger-keypress-button="true">
+            <strong class="color-background">
+                <span>Color Background</span>
+            </strong>
+        </div>
+        <ul class="dropdown switcher-dropdown" data-target="dropdown">
+            <?php foreach ($colorOptions as $_code => $_name) : ?>
+                <li class="colorheader-<?= $block->escapeHtmlAttr($_code) ?> switcher-option">
+                    <a href="#" id="<?php echo str_replace('#', '', $_name->getText()); ?>"><?= $block->escapeHtmlAttr($_code) ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<script>
+    require(['jquery'], function($)
+        {
+            <?php foreach ($colorOptions as $_code => $_name) : ?>
+            $("#<?php echo str_replace('#', '', $_name->getText()); ?>").on('click',function(){
+                document.getElementById("html-body").style.background = '<?php echo $_name->getText(); ?>';
+            });
+            <?php endforeach; ?>
+        }
+    );
+</script>

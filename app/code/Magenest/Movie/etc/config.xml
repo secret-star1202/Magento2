@@ -7,5 +7,15 @@
                 <enable_yes_no>1</enable_yes_no>
             </general>
         </movie>
+        <colorheader>
+            <settings>
+                <coloroption>
+                    <item1>
+                        <color>Gray</color>
+                        <color_picker>#6e716e</color_picker>
+                    </item1>
+                </coloroption>
+            </settings>
+        </colorheader>
     </default>
 </config>
