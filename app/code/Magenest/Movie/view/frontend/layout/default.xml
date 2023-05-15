@@ -16,5 +16,10 @@
                 <argument name='template' xsi:type='string'>Magenest_Movie::account/customer.phtml</argument>
             </action>
         </referenceBlock>
+
+        <referenceContainer name="header.panel">
+            <block class="Magenest\Movie\Block\ColorHeader" name="color_header" before="currency" template="Magenest_Movie::colorheader.phtml"/>
+        </referenceContainer>
     </body>
+
 </page>
