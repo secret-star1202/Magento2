@@ -3,4 +3,7 @@
     <action name="customer/account/editPost">
         <section name="customer"/>
     </action>
+    <action name="buynow/cart/add">
+        <section name="cart"/>
+    </action>
 </config>

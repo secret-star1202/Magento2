@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intern
+ * Copyright (C) 2020 Intern <info@Intern.com>
+ *
+ * @package Intern_BuyNow
+ * @copyright Copyright (c) 2020 Intern (http://www.Intern.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Intern <info@Intern.com>
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.product.addto">
+            <block class="Magenest\Movie\Block\Product\ListProduct"
+                   ifconfig="movie/general/enable_list"
+                   name="product.buynow.list" before="-"
+                   template="Magenest_Movie::buynow-list.phtml"/>
+        </referenceBlock>
+    </body>
+</page>
