@@ -1,0 +1,23 @@
+<?php /** @var View $block */
+
+use Magento\Catalog\Block\Product\View;
+
+?>
+<?php $helper = $this->helper(\Magenest\Movie\Helper\Data::class); ?>
+<?php $formId = $helper->getAddToCartFormId(); ?>
+<?php $buttonTitle = $helper->getButtonTitle() ?>
+<div class="buynow-button">
+    <button type="submit"
+            title="<?= $block->escapeHtml(__($buttonTitle)) ?>"
+            id="buy-now"
+            class="action primary buy-now-btn"
+            data-mage-init='
+            {
+                "Magenest_Movie/js/buy-now": {
+                    "form": "#<?= $block->escapeHtml($formId); ?>"
+                }
+            }
+            '>
+        <span><?= $block->escapeHtml(__($buttonTitle)) ?></span>
+    </button>
+</div>

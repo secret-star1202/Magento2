@@ -10,12 +10,13 @@
                     <resource id="Magento_Backend::director" title="Director"/>
                     <resource id="Magento_Backend::actor" title="Actor"/>
                     <resource id="Magento_Backend::blog" title="Blog"/>
-
                 </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
                             <resource id="Magenest_Movie::config_movie" title="Movie Section"/>
+<!--                            <resource id="Magenest_Movie::config" title="Buynow Setting" sortOrder="50"/>-->
+
                         </resource>
                     </resource>
                 </resource>

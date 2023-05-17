@@ -1,0 +1,17 @@
+.config-nav-block.Intern-tab strong:before {
+    background: url(../images/logo.png) no-repeat;
+    width: 125px;
+    height: 30px;
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: bottom;
+}
+
+.config-nav-block.Intern-tab strong {
+    font-size: 0;
+}
+
+.Intern-tab .admin__page-nav-title.title {
+    padding: 10px;
+}

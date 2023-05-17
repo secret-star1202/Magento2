@@ -2,5 +2,17 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="product.info" template="Magenest_Movie::product/view/form.phtml" />
+        <referenceBlock name="product.info.addtocart">
+            <block class="Magento\Catalog\Block\Product\View"
+                   name="product.buynow"
+                   template="Magenest_Movie::buynow-view.phtml"
+                   before="-" ifconfig="movie/general/enable_view"/>
+        </referenceBlock>
+        <referenceBlock name="product.info.addtocart.additional">
+            <block class="Magento\Catalog\Block\Product\View"
+                   name="product.buynow.config"
+                   template="Magenest_Movie::buynow-view.phtml"
+                   before="-" ifconfig="movie/general/enable_view"/>
+        </referenceBlock>
     </body>
 </page>
