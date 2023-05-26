@@ -10,6 +10,8 @@
                     <resource id="Magento_Backend::director" title="Director"/>
                     <resource id="Magento_Backend::actor" title="Actor"/>
                     <resource id="Magento_Backend::blog" title="Blog"/>
+                    <resource id="Magento_Backend::save" title="Save"/>
+                    <resource id="Magento_Backend::deleted" title="Deleted"/>
                 </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
