@@ -95,17 +95,18 @@
         <constraint xsi:type="foreign" referenceId="MAGENEST_BLOG_CATEGORY_BLOG_ID_MAGENEST_CATEGORY_ID"
                     table="magenest_blog_category" column="category_id" referenceTable="magenest_category"
                     referenceColumn="id" onDelete="CASCADE"/>
-
     </table>
 
-    <!--    <table name="magenest_blog_category" resource="default" engine="innodb" comment="Magenest Blog Category">-->
-    <!--        <column xsi:type="int" name="blog_id" unsigned="true" nullable="false" identity="false" comment="Blog Id"/>-->
-    <!--        <column xsi:type="int" name="category_id" unsigned="true" nullable="false" identity="false" comment="Category Id"/>-->
-    <!--        <constraint xsi:type="foreign" referenceId="MAGENEST_BLOG_CATEGORY_BLOG_ID_MAGENEST_BLOG_ID"-->
-    <!--                    table="magenest_blog_category" column="blog_id" referenceTable="magenest_blog"-->
-    <!--                    referenceColumn="id" onDelete="CASCADE"/>-->
-    <!--        <constraint xsi:type="foreign" referenceId="MAGENEST_BLOG_CATEGORY_CATEGORY_ID_MAGENEST_CATEGORY_ID"-->
-    <!--                    table="magenest_blog_category" column="category_id" referenceTable="magenest_category"-->
-    <!--                    referenceColumn="id" onDelete="CASCADE"/>-->
-    <!--    </table>-->
+    <table name="magenest_category_change_name" onCreate="migrateDataFromAnotherTable(magenest_category_test)">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="Auto Increment"/>
+        <column xsi:type="varchar" name="name" nullable="false" comment="Name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+        <index referenceId="MAGENEST_CATEGORY_TEST_NAME" indexType="btree">
+            <column name="name"/>
+        </index>
+    </table>
+
 </schema>

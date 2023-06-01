@@ -9,6 +9,7 @@ class Blog extends AbstractDb
 {
     const NAME_TABLE = 'magenest_blog';
     const ID = 'id';
+
     public function __construct(Context $context)
     {
         parent::__construct($context);
@@ -18,6 +19,4 @@ class Blog extends AbstractDb
     {
         $this->_init(self::NAME_TABLE, self::ID);
     }
-}{
-
 }
