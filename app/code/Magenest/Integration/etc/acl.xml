@@ -7,6 +7,13 @@
                 <resource id="Magento_Backend::Integration"
                           title="Movies" sortOrder="60">
                 </resource>
+                <resource id="Magenest_Integration::menu" title="Custom Menu" sortOrder="10" >
+                    <resource id="Magenest_Integration::create" title="Create" sortOrder="50" />
+                    <resource id="Magenest_Integration::delete" title="Delete" sortOrder="100" />
+                    <resource id="Magenest_Integration::view" title="View" sortOrder="150">
+                        <resource id="Magenest_Integration::view_additional" title="View Additional Infomation" sortOrder="10"/>
+                    </resource>
+                </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">

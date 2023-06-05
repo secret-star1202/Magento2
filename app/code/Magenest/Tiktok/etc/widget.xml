@@ -1,0 +1,7 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Magenest\Tiktok\Block\Widget\Tiktok" id="tiktok_widget">
+        <label>My Video Tiktok </label>
+        <description>This is my video tiktok!!!</description>
+    </widget>
+</widgets>
