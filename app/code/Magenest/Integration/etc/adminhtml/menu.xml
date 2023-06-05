@@ -2,6 +2,10 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
+        <add id="Magenest_Integration::menu" title="Custom Menu" module="Magenest_Integration" sortOrder="10" resource="Magenest_Integration::menu"/>
+        <add id="Magenest_Integration::create" title="Create" module="Magenest_Integration" sortOrder="10" parent="Magenest_Integration::menu" action="custommenu/create/index" resource="Magenest_Integration::create"/>
+        <add id="Magenest_Integration::delete" title="Delete" module="Magenest_Integration" sortOrder="20" parent="Magenest_Integration::menu" action="custommenu/delete/index" resource="Magenest_Integration::delete"/>
+        <add id="Magenest_Integration::view" title="View" module="Magenest_Integration" sortOrder="30" parent="Magenest_Integration::menu" action="custommenu/view/index" resource="Magenest_Integration::view"/>
         <add id="Magenest_Integration::Integration" title="Integration" module="Magenest_Integration" sortOrder="50"
              translate="title"
              resource="Magenest_Integration::integration"/>
