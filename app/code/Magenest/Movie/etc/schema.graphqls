@@ -1,0 +1,20 @@
+type Query {
+    products (
+        search: String
+        filter: ProductAttributeFilterInput
+        pageSize: Int = 20
+        currentPage: Int = 1
+        sort: ProductAttributeSortInput
+    ) : Products @resolver(class: "Magenest\\Movie\\Model\\Resolver\\Products")
+    @cache(cacheIdentity: "Magenest\\Movie\\Model\\Resolver\\Block\\Identity")
+}
+
+input ProductAttributeFilterInput {
+    category_id: FilterEqualTypeInput
+}
+
+type SearchResultPageInfo {
+    page_size: Int
+    current_page: Int
+    total_pages: Int
+}
