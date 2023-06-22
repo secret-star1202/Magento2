@@ -43,6 +43,6 @@ class Blog extends Template
             ['admin_user_username' => 'second.username', 'admin_user_email' => 'second.email']
         );
 //        return $collection->addFieldToSelect('*');
-            return $collection->addFieldToFilter('id', ['gt' => 15]);
+        return $collection->addFieldToFilter('id', ['gt' => 15]);
     }
 }
